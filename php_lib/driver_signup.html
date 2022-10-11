@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/signup.css">
+    <title>DIGI_TRANS SIGNUP</title>
+
+</head>
+<body class="my-3">
+    <div class="mask">
+        <div class="signupbox">
+            <h1> CREATE AN ACCOUNT </h1>
+            <form action="../php_lib/d_signup.php" id="signup" method="post">
+                <label for="fname">First name</label>
+                <input type="text" name="fname" id="fname" placeholder="create fname"/>
+                <label for="branch">Branch</label>
+                <input type="text" name="branch" id="branch" placeholder="branch name"/>
+                <label for="email">Email</p></label>
+                <input type="text" name="email" id="email" placeholder="Enter your email"/>
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" placeholder="Enter Password"/>
+                <label for="password">Confirm Password</label>
+                <input type="password" name="password_confirmation" id="password_confirmation" placeholder="Repeat your password"/>
+                <input type="submit" value="REGESTER"/>
+                <p> Already have an account?</p>
+                <a href="../php_lib/d_login.php">Login here</a>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
