@@ -1,20 +1,4 @@
 <?php
-
-if(isset($_POST['update'])){
-    $id = $_POST['id'];
-    $vname = $_POST['vname'];
-    $conn ->query("UPDATE drivers_log SET  vname ='$vname',
-
-                                            WHERE id=$id") or die($conn->error);
-
-
-    $_SESSION['message'] = "Record has been Updated!";
-    $_SESSION['msg_type'] = "warning";
-
-    header("location: ../vehicle/v_assignment.php");
-    
-}
-
 if (empty($_POST["fname"])) {
     die("fname is required");
 }

@@ -25,13 +25,15 @@
           ?>
       </div>
       <?php endif ?>
-      <div class="container-md p-5 " style="overflow:scroll;">
-        <h2 class="my-5 text-center">vehicles table</h2>
+      <div class="container py-2" style="overflow:scroll;">
+        <h2 class="my-5 text-center">All vehicles</h2>
         <table class="table">
           <thead>
             <tr>
               <th>Vehicle name</th>
+              <th>Driver</th>
               <th>VIN</th>
+              <th>Reg_number</th>
               <th>Branch</th>
               <th>License Plate</th>
               <th>Year</th>
@@ -47,7 +49,9 @@
             
               <input type="hidden" name="id" value="<?php echo $id; ?>">
               <th><input type="text" class="btn btn-outline-dark lg" name="v_name" value="<?php echo $v_name; ?>" id="v_name" placeholder="E.g mercedes" style="width:100px;"/></th>
+              <th>Driver</th>
               <th><input type="text" class="btn btn-outline-dark lg" name="vin" value="<?php echo $vin; ?>" id="vin" placeholder="vin" style="width:100px;"/></th>
+              <th><input type="number" class="btn btn-outline-dark lg" name="v_reg" value="<?php echo $v_reg; ?>" id="v_reg" placeholder="v_reg" style="width:100px;"/></th>
               <th><input type="text" class="btn btn-outline-dark lg" name="v_branch" value="<?php echo $v_branch; ?>" id="v_branch" placeholder="v_branch" style="width:100px;"/></th>
               <th><input type="text" class="btn btn-outline-dark lg" name="license_plate" value="<?php echo $license_plate; ?>" id="license_plate" placeholder="licenseplate" style="width:100px;"/></th>
               <th><input type="text" class="btn btn-outline-dark lg" name="v_year" value="<?php echo $v_year; ?>" id="v_year" placeholder="v_year in km" style="width:100px;"/></th>
@@ -69,7 +73,9 @@
             <?php while($row = $result->fetch_assoc()): ?>           
                     <tr>
                       <td><?php echo $row['v_name']; ?></td>
+                      <td><?php echo $row['driver']; ?></td>
                       <td><?php echo $row['vin']; ?></td>
+                      <td><?php echo $row['v_reg']; ?></td>
                       <td><?php echo $row['v_branch']; ?></td>
                       <td><?php echo $row['license_plate']; ?></td>
                       <td><?php echo $row['v_year']; ?></td>

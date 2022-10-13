@@ -29,7 +29,7 @@
 
     
       <div class="container-md my-5" style="overflow-y:hidden">
-        <h2 class="my-5 text-center">Drivers assignment</h2>
+        <h2 class="my-5 text-center">All regestered drivers</h2>
         <table class="table">
           <thead>
             <tr>
@@ -38,6 +38,7 @@
               <th>Address</th>
               <th>Branch</th>
               <th>ID_number</th>
+              <th>Reg_number</th>
               <th>Email</th>
               <th>Phone_Number</th>
               <th col-span="2" >Action</th>
@@ -73,6 +74,11 @@
                 </th>
                 <th>
                   <div class="form-group">
+                    <input type="number" name="reg_no" value="<?php echo $reg_no; ?>" class="btn btn-outline-dark" id="reg_no" placeholder="Regestration no" style="width: 100px;"/>
+                  </div>
+                </th>
+                <th>
+                  <div class="form-group">
                     <input type="email" name="email" value="<?php echo $email; ?>" class="btn btn-outline-dark" id="email" placeholder="Your Email" style="width: 100px;"/>
                   </div>
                 </th>
@@ -101,6 +107,7 @@
                         <td><?php echo $row["address"]; ?></td>
                         <td><?php echo $row["branch"]; ?></td>
                         <td><?php echo $row["id_no"]; ?></td>
+                        <td><?php echo $row["reg_no"]; ?></td>
                         <td><?php echo $row["email"]; ?></td>
                         <td><?php echo $row["phone"]; ?></td>
                         <td>

@@ -1,53 +1,63 @@
 <?php
 $id=0;
 $update=false;
-$fname = '';
-$branch = '';
-$vname = '';
-$email = '';
-
+$vname='';
+$driver='';
 
 
 if (isset($_GET['delete'])){
     $id = $_GET['delete'];
+    $conn = require __DIR__ . "../../authentication/mega_db.php";
     $conn->query("DELETE FROM drivers_log WHERE id=$id") or die($conn->error());
     header("location: ../vehicle/v_assignment.php");
 }
-
+if (isset($_GET['delete'])){
+    $id = $_GET['delete'];
+    $conn = require __DIR__ . "../../authentication/mega_db.php";
+    $conn->query("DELETE FROM vehicles_tbl WHERE id=$id") or die($conn->error());
+    header("location: ../vehicle/v_assignment.php");
+}
 if(isset($_GET['edit'])){
     $id = $_GET['edit'];
     $update = true;
+    $conn = require __DIR__ . "../../authentication/mega_db.php";
     $result = $conn->query("SELECT * FROM drivers_log WHERE id=$id") or die($conn_error());
+       
        $drivers_log = $result->fetch_array();
-       $fname = $drivers_log['fname'];
-       $branch = $drivers_log['branch'];
        $vname = $drivers_log['vname'];
-       $email = $drivers_log['email'];
-
-
        header("location: ../vehicle/v_assignment.php");
     
+    } 
+if(isset($_GET['edit'])){
+        $id = $_GET['edit'];
+        $update = true;
+        $conn = require __DIR__ . "../../authentication/mega_db.php";
+        $result1 = $conn->query("SELECT * FROM vehicles_tbl WHERE id=$id") or die($conn_error());
+           
+           $vehicles_tbl = $result1->fetch_array();
+           $driver = $vehicles_tbl['driver'];
+           header("location: ../vehicle/v_assignment.php");
+        
     } 
 
     if(isset($_POST['update'])){
         $id = $_POST['id'];
-        $fname = $_POST['fname'];
-        $branch = $_POST['branch'];
         $vname = $_POST['vname'];
-        $email = $_POST['email'];
-        $conn ->query("UPDATE drivers_log SET  fname ='$fname',
-                                               branch ='$branch',
-                                               vname ='$vname',
-                                               email ='$email',
-
+        $conn = require __DIR__ . "../../authentication/mega_db.php";
+        $conn ->query("UPDATE drivers_log SET  vname ='$vname'
                                                 WHERE id=$id") or die($conn->error);
 
-    
-        $_SESSION['message'] = "Record has been Updated!";
-        $_SESSION['msg_type'] = "warning";
-    
-        header("location: ../vehicle/v_assignment.php");
-        
+        header("location: ../vehicle/v_assignment.php");  
+
     }
 
+    if(isset($_POST['update'])){
+        $id = $_POST['id'];
+        $driver = $_POST['driver'];
+        $conn = require __DIR__ . "../../authentication/mega_db.php";
+        $conn ->query("UPDATE vehicle_tbl SET  driver ='$driver'
+                                                WHERE id=$id") or die($conn->error);
     
+    
+        header("location: ../vehicle/v_assignment.php");
+    }

@@ -1,12 +1,16 @@
 <?php 
 require_once '../authentication/loginsession.php';
-$result = $mysqli->query("SELECT * FROM vehicles_tbl") or die($mysqli->error);
-$fetch = $mysqli->query("SELECT * FROM drivers_tbl") or die($mysqli->error);
-$sql = $mysqli->query("SELECT v_name,license_plate FROM vehicles_tbl ORDER BY license_plate");
-$rowcount = mysqli_num_rows($sql);
-$sql1 = $mysqli->query("SELECT vname FROM drivers_log ORDER BY vname");
-$rowcount1 = mysqli_num_rows($sql1);
+require_once '../side_top_bar/counter.php';
+$result = $mysqli->query("SELECT * FROM vehicles_tbl ORDER BY `vehicles_tbl`.`id` ASC") or die($mysqli->error);
+$result_assigned = $mysqli->query("SELECT * FROM vehicles_tbl WHERE driver !='no_driver' ") or die($mysqli->error);
+$result_unassigned = $mysqli->query("SELECT * FROM vehicles_tbl WHERE driver='no_driver' ") or die($mysqli->error);
+
+$loggedin1= $mysqli->query("SELECT * FROM vehicles_tbl WHERE driver = 'no_driver' ") or die($mysqli->error);
+
+$fetch = $mysqli->query("SELECT * FROM drivers_tbl ORDER BY `drivers_tbl`.`fname` ASC") or die($mysqli->error);
+
 $loggedin = $mysqli->query("SELECT * FROM drivers_log") or die($mysqli->error);
+
 ?>
 
 
@@ -47,7 +51,7 @@ $loggedin = $mysqli->query("SELECT * FROM drivers_log") or die($mysqli->error);
                                 <div id="myDropdown" class="dropdown-content shadow">
                                     <a href="../vehicle/all_vehicles.php">Vehicle list</a>
                                     <a href="../vehicle/v_overview.php">Vehicle overview</a>
-                                    <a href="../vehicle/v_assigned.php">Vehicle assignment</a>
+                                    <a href="../vehicle/v_unassigned.php">Vehicle assignment</a>
                                 </div>
                             <a href="../php_lib/driverstable.php" class="text-light">Drivers</a>
                             <a href="#"onclick="myFunction1()" class="dropbtn1 text-light" >Inspection</a>

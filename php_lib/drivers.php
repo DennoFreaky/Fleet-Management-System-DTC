@@ -4,6 +4,7 @@ $update = false;
 $fname = '';
 $sname ='';
 $id_no ='';
+$reg_no ='';
 $branch='';
 $address ='';
 $phone = '';
@@ -15,6 +16,7 @@ if(isset($_POST['submit'])){
     $fname = $_POST['fname'];
     $sname = $_POST['sname'];
     $id_no = $_POST['id_no'];
+    $reg_no = $_POST['reg_no'];
     $branch = $_POST['branch'];
     $address = $_POST['address'];
     $phone = $_POST['phone'];
@@ -24,8 +26,8 @@ if(isset($_POST['submit'])){
     $_SESSION['msg_type'] = "success";
 
     $conn = require __DIR__ . "../../authentication/mega_db.php";
-    $conn->query("INSERT INTO drivers_tbl (fname,sname,id_no,branch,address,phone,email)
-        VALUES ('$fname','$sname','$id_no','$branch', '$address', '$phone','$email')") or die($conn->error);
+    $conn->query("INSERT INTO drivers_tbl (fname,sname,id_no,reg_no,branch,address,phone,email)
+        VALUES ('$fname','$sname','$id_no',$reg_no,'$branch', '$address', '$phone','$email')") or die($conn->error);
 
 
 header("location: ../authentication/submitted.html");
@@ -53,6 +55,7 @@ if(isset($_GET['edit'])){
        $fname = $drivers_tbl['fname'];
        $sname = $drivers_tbl['sname'];
        $id_no = $drivers_tbl['id_no'];
+       $reg_no = $drivers_tbl['reg_no'];
        $branch = $drivers_tbl['branch'];
        $address = $drivers_tbl['address'];
        $phone = $drivers_tbl['phone'];
@@ -66,13 +69,15 @@ if(isset($_GET['edit'])){
 
         $fname = $_POST['fname'];
         $sname = $_POST['sname'];
+        $reg_no = $_POST['reg_no'];
         $id_no = $_POST['id_no'];
         $branch = $_POST['branch'];
         $address = $_POST['address'];
         $phone = $_POST['phone'];
         $email =$_POST['email'];
 
-        $conn ->query("UPDATE drivers_tbl SET fname='$fname',sname='$sname',id_no='$id_no',branch='$branch',address='$address',phone ='$phone',email='$email' WHERE id=$id") or die($conn->error);
+        $conn = require __DIR__ . "../../authentication/mega_db.php";
+        $conn ->query("UPDATE drivers_tbl SET fname='$fname',sname='$sname',id_no='$id_no',reg_no='$reg_no',branch='$branch',address='$address',phone ='$phone',email='$email' WHERE id=$id") or die($conn->error);
     
         $_SESSION['message'] = "Record has been Updated!";
         $_SESSION['msg_type'] = "warning";

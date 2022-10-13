@@ -38,7 +38,11 @@
 
                             <div class="col  m-1 text-end">
                                 <h5 class=" text-primary">
-                                    <?php echo $rowcount; ?></h5>
+                                <?php if ($rowcount == 0) { ?>
+                                    <h6 class="m-2 text-success"><?php echo $rowcount ?> </h6>
+                                <?php }else{ ?>
+                                    <h6 class="m-2 text-primary"> <?php echo $rowcount ?></h6>
+                                <?php } ?>
                             </div>
                         </div>
                         <div class="row">
@@ -149,26 +153,34 @@
                             <div class="col-sm fw-bold shadow m-1 rounded bg-light">
                                 <div class="row">
                                     <div class="col fw-bold m-1">
-                                        <p>Vehicle assignment</p>
+                                        <p>Vehicle - Driver assignment</p>
                                     </div>
                                 </div>
-                                <a href="">
+                                <a href="../vehicle/v_assigned.php">
                                     <div class="row m-3 rounded-pill shadow">
                                         <div class="col text-center fw-bold m-1">
-                                            <p class="m-2">Assigned Vehicles</p>
+                                            <p class="m-2">Assigned</p>
                                         </div>
                                         <div class="col text-center fw-bold m-1 ">
-                                            <p class="m-2 danger">2</p>
+                                        <?php if ($rowcount2 == 0) { ?>
+                                            <h6 class="m-2 text-success"><?php echo $rowcount2 ?> </h6>
+                                        <?php }else{ ?>
+                                            <h6 class="m-2 text-primary"> <?php echo $rowcount2 ?></h6>
+                                        <?php } ?>
                                         </div>
                                     </div>
                                 </a>
-                                <a href="">
+                                <a href="../vehicle/v_unassigned.php">
                                     <div class="row m-3 rounded-pill shadow">
                                         <div class="col text-center fw-bold m-1">
                                             <p class="m-2">Unassigned</p>
                                         </div>
                                         <div class="col text-center fw-bold m-1 ">
-                                            <h5 class=" text-primary" ><?php echo $rowcount1; ?></h5>
+                                        <?php if ($rowcount1 == 0) { ?>
+                                            <h6 class="m-2 text-success"><?php echo $rowcount1 ?> </h6>
+                                        <?php }else{ ?>
+                                            <h6 class="m-2 text-primary"> <?php echo $rowcount1 ?></h6>
+                                        <?php } ?>
                                         </div>
                                     </div>
                                 </a>
