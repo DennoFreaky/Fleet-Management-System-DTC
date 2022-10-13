@@ -35,6 +35,7 @@
             <tr>
               <th>First Name</th>
               <th>Second Name</th>
+              <th>vname</th>
               <th>Address</th>
               <th>Branch</th>
               <th>ID_number</th>
@@ -55,6 +56,11 @@
                 <th>
                   <div class="form-group">
                     <input type="text" name="sname" value="<?php echo $sname; ?>" id="second_name" class="btn btn-outline-dark" placeholder="Second name" style="width: 110px;"/>
+                  </div>
+                </th>
+                <th>
+                  <div class="form-group">
+                    <input type="text" name="vname" value="<?php echo $vname; ?>" id="vname" class="btn btn-outline-dark" placeholder="vehicle name" style="width: 110px;"/>
                   </div>
                 </th>
                 <th>
@@ -87,14 +93,14 @@
                     <input type="tel" name="phone" value="<?php echo $phone; ?>" class="btn btn-outline-dark" id="phone" placeholder="07*****(Phone_No)" style="width: 100px;"/>
                   </div>
                 </th>
-                <th><div class="form-group">
+                <th>
                     <?php
                     if ($update == true):?>
                       <button type="submit" name="update" style="width:120px;font-size:14px;" class="btn btn-secondary">UPDATE</button>
                     <?php else: ?>
                       <b class="btn btn-sm btn-secondary"style="width:110px;font-size:12px;">click edit to update</b>
                     <?php endif; ?>
-                     </div></th>
+                </th>
                     </form>
             </tr>
           </thead>
@@ -104,6 +110,7 @@
                     <tr>
                         <td><?php echo $row['fname']; ?></td>
                         <td><?php echo $row["sname"]; ?></td>
+                        <td><?php echo $row["vname"]; ?></td>
                         <td><?php echo $row["address"]; ?></td>
                         <td><?php echo $row["branch"]; ?></td>
                         <td><?php echo $row["id_no"]; ?></td>
