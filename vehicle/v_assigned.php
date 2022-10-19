@@ -21,7 +21,7 @@
                 <div class="row">
                     
                 </div>
-                <h2 class="my-5 text-center">Vehicles with drivers</h2>
+                <h4 class="my-3 text-center">Vehicles with drivers</h4>
                 <table class="table">
                     <thead>
                       <tr>
@@ -33,25 +33,7 @@
                         <th>Engine</th>
                         <th colspan="2">Action</th>
                       </tr>
-                      <form method="post" action="../vehicle/v_form_process.php" id="">
-                      <tr>
-                      <?php require_once '../vehicle/v_form_process.php';?>
                       
-                        <input type="hidden" name="id" value="<?php echo $id; ?>">
-                        <th><input type="text" class="btn btn-outline-dark lg" name="v_name" value="<?php echo $v_name; ?>" id="v_name" placeholder="E.g mercedes" style="width:100px;"/></th>
-                        <th><input type="text" class="btn btn-outline-dark lg" name="v_branch" value="<?php echo $v_branch; ?>" id="v_branch" placeholder="v_branch" style="width:100px;"/></th>
-                        <th><input type="text" class="btn btn-outline-dark lg" name="license_plate" value="<?php echo $license_plate; ?>" id="license_plate" placeholder="licenseplate" style="width:100px;"/></th>
-                        <th><input type="text" class="btn btn-outline-dark lg" name="v_model" value="<?php echo $v_model; ?>" id="v_model" placeholder="v_model in km" style="width:100px;"/></th>
-                        <th><input type="text" class="btn btn-outline-dark lg" name="v_engine" value="<?php echo $v_engine; ?>" id="v_engine" placeholder="e.g 000hp" style="width:100px;"/></th>
-                        <th colspan="2">
-                          <?php if ($update == true):?>
-                            <button type="submit" name="update" class="btn btn-secondary">Update</button>
-                          <?php else: ?>
-                            <b class="btn btn-sm btn-secondary">Click edit to Update</b>
-                          <?php endif; ?>
-                        </th>
-                      </tr>
-                      </form>
                     </thead>
                     <tbody>
                       <?php while($row1 = $result_assigned->fetch_assoc()): ?>           
@@ -63,9 +45,9 @@
                                 <td><?php echo $row1['v_model']; ?></td>
                                 <td><?php echo $row1['v_engine']; ?></td>
                                 <td>
-                                  <a href="../vehicle/all_vehicles.php?edit=<?php echo $row['id']; ?>"
-                                    class="btn btn-info">Edit</a>
-                                  <a href="../vehicle/v_form_process.php?delete=<?php echo $row['id']; ?>"
+                                  <a href="../vehicle/v_unassigned.php?edit=<?php echo $row['id']; ?>"
+                                    class="editbtn btn">Edit</a>
+                                  <a href="../vehicle/v_assignment_tbl/v_assign_process.php?delete=<?php echo $row['id']; ?>"
                                     class="btn btn-danger">Delete</a>                       
                                 </td>  
                               </tr>

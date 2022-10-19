@@ -1,15 +1,16 @@
 <?php 
 require_once '../authentication/loginsession.php';
 require_once '../side_top_bar/counter.php';
-$result = $mysqli->query("SELECT * FROM vehicles_tbl ORDER BY `vehicles_tbl`.`id` ASC") or die($mysqli->error);
-$result_assigned = $mysqli->query("SELECT * FROM vehicles_tbl WHERE driver !='no_driver' ") or die($mysqli->error);
-$result_unassigned = $mysqli->query("SELECT * FROM vehicles_tbl WHERE driver='no_driver' ") or die($mysqli->error);
+$allvehicle = $mysqli->query("SELECT * FROM vehicles_tbl ORDER BY `vehicles_tbl`.`id` ASC") or die($mysqli->error);
+$result_assigned = $mysqli->query("SELECT * FROM vehicles_tbl WHERE driver != 'none' ") or die($mysqli->error);
 
-$loggedin1= $mysqli->query("SELECT * FROM vehicles_tbl WHERE driver = 'no_driver' ") or die($mysqli->error);
+$result_unassigned = $mysqli->query("SELECT * FROM vehicles_tbl WHERE driver = 'none' ") or die($mysqli->error);
+
+$nodriver = $mysqli->query("SELECT * FROM vehicles_tbl WHERE driver = 'none' ") or die($mysqli->error);
 
 $fetch = $mysqli->query("SELECT * FROM drivers_tbl ORDER BY `drivers_tbl`.`fname` ASC") or die($mysqli->error);
 
-$loggedin = $mysqli->query("SELECT * FROM drivers_log") or die($mysqli->error);
+$novehicle = $mysqli->query("SELECT * FROM drivers_log WHERE v_name = 'none' ") or die($mysqli->error);
 
 ?>
 

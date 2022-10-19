@@ -5,29 +5,52 @@
     <link rel="stylesheet" href="../bootstrap-5.0.0-dist/css/bootstrap.css">
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/dropdown.css">
-    <title>DIGI_TRANS</title>
+    <title>MEGA_DRIVER</title>
 
 </head>
-<body >
-
-    <div class="d-flex">
-        
-        <?php require_once '../side_top_bar/sidebar.php';?>
-        <div class="col">
-                <?php require '../side_top_bar/topbar.php';?>
-            <div class="container" id="newform">
-                <div class="my-1">
-                    <h4 class="fw-bold">Dashboard</h4>
-                </div>
-                <div class="row">
-                    <div class="col-md shadow m-2 p-2 rounded bg-light">
-                        <h3 class="text-dark text-center p-5" style="">START INSPECTION</h3>
+<body class="mobile">
+    <div class="d-flex ">
+        <div class="col-12">
+            <?php require_once '../driver_interface/sidetop_bar/topbar.php' ?>
+            <div class="mobilehomepage" id="mobilehomepage">
+                <a href="../driver_interface/fueling.php" >
+                    <div class="row rowtwo shadow ">  
+                        <div class="col-4 bg-transparent text-start py-3 rounded-start bg-light">
+                            <h3 class="text-dark " style="">START FUELING</h3>
+                        </div>
+                        <div class="col-8 bg-transparent text-start py-3  rounded-end bg-light">
+                            <h3 class="text-dark  " style="">Fuel Tank (litres): </h3>
+                        </div>
                     </div>
-                    <div class="col-md shadow m-2 p-2 rounded bg-light">
-                        <h3 class="text-dark text-center p-5" style="">START FUELING</h3>
+                </a>
+            
+                <a href="../driver_interface/inspection.php" >
+                    <div class="row rowthree shadow">
+                        <div class="col-4 bg-transparent text-start py-3 rounded-start bg-light">
+                            <h3 class="text-dark" style="">START INSPECTION</h3>
+                        </div>
+                        <div class="col-8 bg-transparent text-start py-3 rounded-end bg-light">
+                            <h3 class="text-dark" style="">START INSPECTION</h3>
+                            <div class="d-flex" style="overflow:scroll;">
+                                <img src="../pics/1291276.jpg" style="height:150px;"/>
+                                <img src="../pics/1291276.jpg" style="height:150px;"/>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                </a>
+            
+                <a href="../driver_interface/vendors_garage.php" >
+                    <div class="row rowthree shadow">
+                        <div class="col-4 text-start shadow py-3 rounded-start bg-light">
+                            <h3 class="text-dark" style="">VENDORS & GARAGE</h3>
+                        </div>
+                        <div class="col-8 text-start shadow py-3 rounded-end bg-light">
+                            <h3 class="text-dark" style="">GARAGE</h3>
+                        </div>
+                    </div>
+                </a>
             </div>
         </div>
+    </div>
 </body>
 </html>

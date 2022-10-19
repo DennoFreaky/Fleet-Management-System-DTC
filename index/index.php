@@ -152,7 +152,7 @@
                             </div>
                             <div class="col-sm fw-bold shadow m-1 rounded bg-light">
                                 <div class="row">
-                                    <div class="col fw-bold m-1">
+                                    <div class="col fw-bold m-1 text-center">
                                         <p>Vehicle - Driver assignment</p>
                                     </div>
                                 </div>
@@ -173,7 +173,7 @@
                                 <a href="../vehicle/v_unassigned.php">
                                     <div class="row m-3 rounded-pill shadow">
                                         <div class="col text-center fw-bold m-1">
-                                            <p class="m-2">Unassigned</p>
+                                            <p class="m-2">Unassigned </p>
                                         </div>
                                         <div class="col text-center fw-bold m-1 ">
                                         <?php if ($rowcount1 == 0) { ?>

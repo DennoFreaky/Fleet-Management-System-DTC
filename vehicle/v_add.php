@@ -41,6 +41,10 @@
                                 <input type="text" class="form-control" name="vin"  id="vin" placeholder="vin-number"/>
                             </div>
                             <div class="form-group my-2">
+                                <label for="v_reg">V-regestration</label>
+                                <input type="number" class="form-control" name="v_reg"  id="vin" placeholder="vehicle company no"/>
+                            </div>
+                            <div class="form-group my-2">
                                 <label for="v_branch">Branch</label>
                                 <?php if (isset($mega_admin)): ?>
                                 <input type="text" class="form-control" name="v_branch"  value="<?= ($mega_admin["branch"]) ?>" id="v_branch" placeholder="branch"/>
@@ -63,10 +67,6 @@
                                 <input type="text" class="form-control" name="v_model"  id="v_model" placeholder="model"/>
                             </div>
                             <div class="form-group my-2">
-                                <label for="v_series">Series</label>
-                                <input type="text" class="form-control" name="v_series"  id="v_series" placeholder="series"/>
-                            </div>
-                            <div class="form-group my-2">
                                 <label for="v_style">Style</label>
                                 <input type="text" class="form-control" name="v_style"  id="v_style" placeholder="v_style"/>
                             </div>
@@ -75,22 +75,11 @@
                                 <label for="v_engine">Engine</label>
                                 <input type="text" class="form-control" name="v_engine"  id="v_engine" placeholder="engine"/>
                             </div>
-                            <div class="form-group my-2">
-                                <label for="v_gearbox">Gearbox</label>
-                                <input type="text" class="form-control" name="v_gearbox"  id="v_gearbox" placeholder="gearbox"/>
-                            </div>
-                            <div class="form-group my-2">
-                                <label for="v_chassis">Chassis</label>
-                                <input type="text" class="form-control" name="v_chassis"  id="v_chassis" placeholder="v_chassis"/>
-                            </div>
-                            <div class="form-group my-2">
-                                <label for="v_fueltank">Fuel Tank</label>
-                                <input type="text" class="form-control" name="v_fueltank"  id="v_fueltank" placeholder="fueltank"/>
-                            </div>
                             <h4>Others</h4>
                             <button type="submit" name="submit" class="my-2 text-light btn btn-outline-dark btn-secondary">Submit</button>
-
                         </form>
+
+                        
                     </div>
                     <div class="col-sm m-1 shadow">
                         <p class="p-2"><b>Add vehicle using Vehicle Identification Number(VIN)</b></p>

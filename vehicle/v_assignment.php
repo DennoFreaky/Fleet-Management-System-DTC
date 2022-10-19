@@ -13,7 +13,8 @@
                         </thead>
                         <tbody>
 
-                            <?php if($row = $loggedin1->fetch_assoc()):?>
+                            <?php if($row1 = $novehicle->fetch_assoc()):?>
+                                
                             <tr>
                                 <?php require_once '../vehicle/v_assignment_tbl/v_assign_process.php';?>
                                 <form method="post" action="../vehicle/v_assignment_tbl/v_assign_process.php" id="">
@@ -21,11 +22,11 @@
                                 <td>
                                     <?php // Assigning a driver to a vehicle ?>
                                     <?php if ($update == true):?>
-                                    <input list="drivers" name="driver" id="driver" class="btn btn-light btn-outline-dark"/>
-                                        <datalist id="drivers">
-                                        <?php while($row = $loggedin->fetch_assoc()):?>
-                                            <option value="<?php echo $row['fname']; ?>">
-                                            <?php endwhile; ?>
+                                    <input list="vname" name="v_name" type="text" id="v_name" class="btn btn-light btn-outline-secondary"/>
+                                        <datalist id="vname">
+                                        <?php while($row = $nodriver->fetch_assoc()):?>
+                                            <option value="<?php echo $row['v_name']; ?>">
+                                        <?php endwhile; ?>
                                         </datalist>
                                     <?php else: ?>
                                     <p>Unassigned vehicle : <?php if($rowcount1 == 0){ ?>
@@ -37,13 +38,13 @@
                                 </td>
                                 <td>
                                     <?php if ($update == true):?>
-                                    <button type="submit" name="update" class="btn btn-secondary">Assign</button>
+                                    <button type="submit" name="update" class="btn btn-primary">Assign</button>
                                     <?php else: ?>
-                                    <a href="../vehicle/v_unassigned.php?edit=<?php echo $row['id']; ?>"
-                                    class="btn btn-info">Press here to assign driver and vehicles</a>
+                                    <a href="../vehicle/v_unassigned.php?edit=<?php echo $row1['id']; ?>"
+                                    class="btn text-light editbtn">Press here to assign driver and vehicles</a>
                                     <?php endif; ?>
                                 </form>
-                                    <a href="../vehicle/v_assignment_tbl/v_assign_process.php?delete=<?php echo $row['id']; ?>"
+                                    <a href="../vehicle/v_unassigned.php?delete=<?php echo $row1['v_name']; ?>"
                                     class="btn btn-danger">Remove assignment</a>              
                                 </td>  
                             </tr>

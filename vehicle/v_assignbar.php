@@ -1,9 +1,9 @@
-                <div class="d-flex">
+                <div class="d-flex my-3">
                     <table class="table">
                         <thead>
-                            <tr>
-                                <th><a href="v_assigned.php"><h6>Assigned vehicles</h6></a></th>
-                                <th><a href="v_unassigned.php"><h6>Unassigned vehicles</h6></a></th>
+                            <tr class="">
+                                <th class=""><a href="v_assigned.php" class="text-center"><h5>Assigned vehicles</h5></a></th>
+                                <th class=""><a href="v_unassigned.php" class="text-center"><h5>Unassigned vehicles</h5></a></th>
                             </tr>
                         </thead>
                     </table>
