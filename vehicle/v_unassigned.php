@@ -33,9 +33,13 @@ $d_data = $mysqli->query($data1);
                 ?>
                 <?php endif ?>
                 <?php require '../vehicle/v_assignbar.php';?>
+                <?php if (isset($mega_admin)): ?>
+                
+                <?php else: ?>
                 <div class="row">
                     <?php require '../vehicle/v_assignment.php';?>
                 </div>
+                <?php endif; ?>
                 <h4 class="my-3 text-start">Vehicles without drivers</h4>
                 <table class="table">
                   <thead>

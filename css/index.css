@@ -35,16 +35,25 @@ body a{
 }
 
 .rowtwo{
-    margin-top: 150px;
+    margin-top: 80px;
+}
+.backbutton{
+    margin-top: 65px;
 }
 
 .rowthree{
-    margin-top: 60px;
+    margin-top: 50px;
 }
-
+.v_index{
+    margin: 0px;
+}
 .mobilehomepage{
     margin: 20px;
     margin-top: 30px;
+    
+}
+.homepage{
+    margin: 0px;
 }
 
 .topshadow{
@@ -52,8 +61,21 @@ body a{
     margin-left: 0px;
 }
 .mobile{
-    background-image: linear-gradient( rgb(226, 231, 235), rgba(197, 186, 171, 0)) ;
+    background-image: linear-gradient( rgb(197, 220, 236), rgb(216, 202, 223));
     background-size: cover;
     background-repeat: no-repeat;
+    padding:0px;
+    margin:0px;
+    
+}
+.m-left{
+    margin-left: 0px;
+    margin-right: 2px;
+    padding: 0px;
+}
 
+.m-right{
+    margin-left: 2px;
+    margin-right: 0px;
+    padding: 0px;
 }

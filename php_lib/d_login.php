@@ -6,25 +6,25 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     $mysqli = require __DIR__ . "../../authentication/mega_db.php";
 
-    $sql = sprintf("SELECT * FROM drivers_log
+    $sql = sprintf("SELECT * FROM drivers_tbl
                     WHERE email = '%s'",
                    $mysqli->real_escape_string($_POST["email"]));
 
     $result = $mysqli->query($sql);
 
-    $drivers_log = $result->fetch_assoc();
+    $drivers_tbl = $result->fetch_assoc();
 
-    if ($drivers_log) {
+    if ($drivers_tbl) {
 
-        if (password_verify($_POST["password"], $drivers_log["password_hash"])) {
+        if (password_verify($_POST["password"], $drivers_tbl["password_hash"])) {
 
             session_start();
 
             session_regenerate_id();
 
-            $_SESSION["drivers_log_id"] = $drivers_log["id"];
+            $_SESSION["drivers_tbl_id"] = $drivers_tbl["id"];
 
-            header("Location: ../index/index.php");
+            header("Location: ../driver_interface/d_index.php");
             exit;
         }
         
@@ -56,7 +56,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 <input type="password" name="password" id="password" placeholder="Enter Password"/>
                 <input type="submit" value="LOGIN"/>
                 <p> Dont have an account?</p>
-                <a href="../php_lib/driver_signup.html">signup here</a>
             </form>
         </div>
     </div>

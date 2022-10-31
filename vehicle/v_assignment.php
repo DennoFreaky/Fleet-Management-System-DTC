@@ -3,7 +3,7 @@
                         <h2 class="my-2 text-center">Assign driver here</h2>
                         <thead><?php require_once '../vehicle/v_assign_process.php';?>
                             <tr><?php if ($update == true):?>
-                                <th>Driver Firstname</th>
+                                <th>Truck Name</th>
                                 <?php else: ?>
                                 <th>From vehicles table</th>
                                 <?php endif; ?>

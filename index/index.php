@@ -2,6 +2,7 @@
 <html lang="eng">
 <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../bootstrap-5.0.0-dist/css/bootstrap.css">
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/dropdown.css">
@@ -50,7 +51,7 @@
                                 <a href="">Active</a>
                             </div>
                             <div class="col m-1 text-end">
-                                <p id="cpm">Details</p>
+                                <p id="">Details</p>
                             </div>
                         </div>
                         <div class="row">
@@ -71,6 +72,35 @@
                             <div class="col fw-bold m-1 text-end">
                                 <p class="">Details</p>
                             </div>
+                            <div class="row">
+                                <canvas id="myChart1" style="width:100%;max-width:700px"></canvas>
+                                <script>
+                                    var xValues = [100,200,300,400,500,600,700,800,900,1000];
+                                    
+                                    new Chart("myChart1", {
+                                      type: "line",
+                                      data: {
+                                        labels: xValues,
+                                        datasets: [{ 
+                                          data: [860,1140,1060,1060,1070,1110,1330,2210,7830,2478],
+                                          borderColor: "red",
+                                          fill: false
+                                        }, { 
+                                          data: [1600,1700,1700,1900,2000,2700,4000,5000,6000,7000],
+                                          borderColor: "green",
+                                          fill: false
+                                        }, { 
+                                          data: [300,700,2000,5000,6000,4000,2000,1000,200,100],
+                                          borderColor: "blue",
+                                          fill: false
+                                        }]
+                                      },
+                                      options: {
+                                        legend: {display: false}
+                                      }
+                                    });
+                                </script>
+                            </div>
                         </div>
                     </div>
                     <div class="col-md shadow m-1 rounded bg-light">
@@ -80,6 +110,31 @@
                             </div>
                             <div class="col fw-bold m-1 text-end">
                                 <p class="">Details</p>
+                            </div>
+                            <div class="row">
+                                <canvas id="myChart2" style="width:100%;max-width:700px"></canvas>
+                                <script>
+                                    var xValues = [100,200,300,400,500,600,700,800,900,1000];
+                                    
+                                    new Chart("myChart2", {
+                                      type: "line",
+                                      data: {
+                                        labels: xValues,
+                                        datasets: [{ 
+                                          data: [860,1140,1060,1060,1070,1110,1330,2210,7830,2478],
+                                          borderColor: "red",
+                                          fill: false
+                                        }, { 
+                                          data: [1600,1700,1700,1900,2000,2700,4000,5000,6000,7000],
+                                          borderColor: "green",
+                                          fill: false
+                                        }]
+                                      },
+                                      options: {
+                                        legend: {display: false}
+                                      }
+                                    });
+                                </script>
                             </div>
                         </div>
                     </div>
@@ -113,11 +168,6 @@
                                         </div>
                                     </div>
                                 </a>
-                                <div class="row m-3 rounded-pill shadow">
-                                    <div class="col text-center fw-bold m-1" style="height:140px;">
-        
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -141,9 +191,15 @@
                                 </a>
                                 <a href="">
                                     <div class="row m-3 rounded-pill shadow">
+                                    <?php if (isset($mega_admin)): ?>
+                                        <div class="col text-center fw-bold m-1">
+                                            <p class="m-2">Solved Issues</p>
+                                        </div>
+                                    <?php else: ?>
                                         <div class="col text-center fw-bold m-1">
                                             <p class="m-2">Overdue</p>
                                         </div>
+                                    <?php endif; ?>
                                         <div class="col text-center fw-bold m-1 ">
                                             <p class="m-2 danger">0</p>
                                         </div>

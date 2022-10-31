@@ -34,7 +34,7 @@
                         <form class="form-row" style="font-weight:bold;"method="POST" action="../php_lib/drivers.php">
                             <div class="col form-group my-2">
                                 <label for="fname">First Name</label>
-                                <input type="text" class="form-control" name="fname"  id="fname" placeholder="vehicle-name"/>
+                                <input type="text" class="form-control" name="fname"  id="fname" placeholder="first name"/>
                             </div>
                             <div class="col form-group my-2">
                                 <label for="sname">Second name</label>
@@ -45,7 +45,6 @@
                                 <input type="number" class="form-control" name="id_no"  id="id_no" placeholder="id number"/>
                             </div>
                             <div class="col form-group my-2">
-                                
                                 <label for="branch">Branch</label>
                                 <?php if (isset($mega_admin)): ?>
                                 <input type="text" class="form-control" name="branch" value="<?= ($mega_admin["branch"]) ?>"  id="branch" placeholder="branch"/>
@@ -59,9 +58,16 @@
                             <label for="phone">Phone number</label>
                                 <input type="number" class="form-control" name="phone"  id="style" placeholder="vehicle-name"/>
                             </div>
+                            <p></p>
+                            <h5>Create Driver Account</h5>
+                            <p></p>
                             <div class="col form-group my-2">
                                 <label for="email">Email</label>
                                 <input type="email" class="form-control" name="email"  id="email" placeholder="your email"/>
+                            </div>
+                            <div class="col form-group my-2">
+                                <label for="password">Password</label>
+                                <input type="password" class="form-control" name="password_hash"  id="password" placeholder="create password"/>
                             </div>
                             <div class="text-center my-2">
                                 <button type="submit" name="submit" class="my-2 text-light btn btn-outline-dark btn-secondary">Submit</button>

@@ -16,9 +16,12 @@ $novehicle = $mysqli->query("SELECT * FROM drivers_log WHERE v_name = 'none' ") 
 
 
 <script src="../js/index.js"></script>
+<script
+src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+</script>
         <div class="col-2 shadow full-height bg-dark" id="sidebar" >             
             <div class="dflex" style="position:fixed">
-                <div class="col-sm p-1" style="height:50px;overflow-y:scroll;">
+                <div class="col-sm p-1" style="height:50px;overflow:scroll;">
                     <div class="row">
                         <div class="col-3 py-1 ">
                                 <p><img
@@ -29,7 +32,7 @@ $novehicle = $mysqli->query("SELECT * FROM drivers_log WHERE v_name = 'none' ") 
                         </div>
                         <div class="col-9 logout py-1 d-flex">
                     <?php if (isset($mega_admin)): ?>
-                                <p class="account text-light" style="font-size:10px;"><b><?= ($mega_admin["branch"]) ?>&nbsp;Admin:</b>&nbsp;<a href="../authentication/logout.php"> Logout</a></p>
+                                <p class="account text-light" style="font-size:10px;"><b><?= ($mega_admin["branch"]) ?></b>&nbsp;<a href="../authentication/logout.php"> Logout</a></p>
                             <div class="row">
                                 <div class="col-sm m-0">
                                     <p class="fw-bold account text-light" style="font-size:10px;">&nbsp;&nbsp;<?= ($mega_admin["username"]) ?>
@@ -49,15 +52,20 @@ $novehicle = $mysqli->query("SELECT * FROM drivers_log WHERE v_name = 'none' ") 
                         <div class="dropdown py-2 account" style="">
                             <a href="../index/index.php" class="text-light">Dashboard</a>
                             <a href="#" onclick="myFunction()" class="dropbtn text-light">Vehicles</a>
-                                <div id="myDropdown" class="dropdown-content shadow">
-                                    <a href="../vehicle/all_vehicles.php">Vehicle list</a>
-                                    <a href="../vehicle/v_overview.php">Vehicle overview</a>
-                                    <a href="../vehicle/v_unassigned.php">Vehicle assignment</a>
-                                </div>
+                            <div id="myDropdown" class="dropdown-content shadow">
+                                <a href="../vehicle/all_vehicles.php">Vehicle list</a>
+                                <a href="../vehicle/v_overview.php">Vehicle overview</a>
+                                <a href="../vehicle/v_unassigned.php">Vehicle assignment</a>
+                            </div>
+                            <?php if (isset($mega_admin)): ?>
+                            <a href="../php_lib/fmotable.php" class="text-light">Fleet Managemnet Officers</a>
                             <a href="../php_lib/driverstable.php" class="text-light">Drivers</a>
+                            <?php else: ?>
+                                <a href="../php_lib/driverstable.php" class="text-light">Drivers</a>
+                                <a href="../php_lib/driverstable.php" class="text-light">Vendors % Garage</a>
+                            <?php endif; ?>
                             <a href="#"onclick="myFunction1()" class="dropbtn1 text-light" >Inspection</a>
                                 <div id="myDropdown1" class="dropdown-content1 shadow">
-                                    <a href="#">Vehicle inspection</a>
                                     <a href="#">Inspection history</a>
                                 </div>
                             <a href="#" class="text-light">Issues</a>
@@ -67,10 +75,8 @@ $novehicle = $mysqli->query("SELECT * FROM drivers_log WHERE v_name = 'none' ") 
                                     <a href="#">Service history</a>
                                     <a href="#">Service cost</a>
                                 </div>
-                            <a href="#" class="text-light">Maintainance</a>
                             <a href="#" class="text-light">Fuel History</a>
                             <a href="#" class="text-light">Reports</a>
-                            <a href="#" class="text-light">Support</a>
                         </div>
                     </div>
                 </div>
