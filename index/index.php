@@ -75,7 +75,7 @@
                             <div class="row">
                                 <canvas id="myChart1" style="width:100%;max-width:700px"></canvas>
                                 <script>
-                                    var xValues = [Sunday,Monday,Tuesday,Wednesday,Thursday,Friday,Suturday];
+                                    var xValues = ["Monday","Tuesday","Wednesday","Thursday","Friday","Suturday"];
                                     
                                     new Chart("myChart1", {
                                       type: "line",

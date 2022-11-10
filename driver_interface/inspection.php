@@ -28,11 +28,11 @@
                                         </div>
                                         <div class="col-3 text-center">
                                             <label for="good">Good</label><br>
-                                            <input type="radio" class="bghover bg-light" name="window" value="Good" id="window" placeholder=""/>
+                                            <input type="radio" class="bghover bg-light" name="window" value="Good" id="good" placeholder=""/>
                                         </div>
                                         <div class="col-3 text-center">      
                                             <label for="needrepair" style="width:100px;">Need repair</label><br>
-                                            <input type="radio" class="bghover bg-light" name="window" value="need repair" id="window" placeholder=""/>
+                                            <input type="radio" class="bghover bg-light" name="window" value="need repair" id="radio" placeholder=""/>
                                         </div>
                                         <div class="col-3 text-center">      
                                             <label for="n/a">N/A</label><br>
@@ -85,15 +85,15 @@
                                         </div>
                                         <div class="col-3 text-center">
                                             <label for="good">Good</label><br>
-                                            <input type="radio" class="bghover bg-light" name="reflactor" value="Good" id="window" placeholder=""/>
+                                            <input type="radio" class="bghover bg-light" name="reflector" value="Good" id="window" placeholder=""/>
                                         </div>
                                         <div class="col-3 text-center">      
                                             <label for="needrepair" style="width:100px;">Need repair</label><br>
-                                            <input type="radio" class="bghover bg-light" name="reflactor" value="need repair" id="window" placeholder=""/>
+                                            <input type="radio" class="bghover bg-light" name="reflector" value="need repair" id="window" placeholder=""/>
                                         </div>
                                         <div class="col-3 text-center">      
                                             <label for="n/a">N/A</label><br>
-                                            <input type="radio" class="bghover bg-light" name="reflactor" value="not_assigned" id="n/a" placeholder=""/>
+                                            <input type="radio" class="bghover bg-light" name="reflector" value="not_assigned" id="n/a" placeholder=""/>
                                         </div>
                                     </div>
                                 </div>
@@ -146,11 +146,11 @@
                                         </div>
                                         <div class="col-3 text-center">
                                             <label for="good">Good</label><br>
-                                            <input type="radio" class="bghover bg-light" name="headlight" value="Good" id="window" placeholder=""/>
+                                            <input type="radio" class="bghover bg-light" name="headlight" value="Good" id="good" placeholder=""/>
                                         </div>
                                         <div class="col-3 text-center">      
                                             <label for="needrepair" style="width:100px;">Need repair</label><br>
-                                            <input type="radio" class="bghover bg-light" name="headlight" value="need repair" id="window" placeholder=""/>
+                                            <input type="radio" class="bghover bg-light" name="headlight" value="need repair" id="needrepair" placeholder=""/>
                                         </div>
                                         <div class="col-3 text-center">      
                                             <label for="n/a">N/A</label><br>
@@ -161,19 +161,19 @@
                                 <div class="col-sm form-group m-5">
                                     <div class="row">
                                         <div class="col-3 text-center">
-                                            <H6>Window</H6>
+                                            <H6>High Beam</H6>
                                         </div>
                                         <div class="col-3 text-center">
                                             <label for="good">Good</label><br>
-                                            <input type="radio" class="bghover bg-light" name="window" value="Good" id="window" placeholder=""/>
+                                            <input type="radio" class="bghover bg-light" name="highbeam" value="Good" id="window" placeholder=""/>
                                         </div>
                                         <div class="col-3 text-center">      
                                             <label for="needrepair" style="width:100px;">Need repair</label><br>
-                                            <input type="radio" class="bghover bg-light" name="window" value="need repair" id="window" placeholder=""/>
+                                            <input type="radio" class="bghover bg-light" name="highbeam" value="need repair" id="window" placeholder=""/>
                                         </div>
                                         <div class="col-3 text-center">      
                                             <label for="n/a">N/A</label><br>
-                                            <input type="radio" class="bghover bg-light" name="window" value="not_assigned" id="n/a" placeholder=""/>
+                                            <input type="radio" class="bghover bg-light" name="highbeam" value="not_assigned" id="n/a" placeholder=""/>
                                         </div>
                                     </div>
                                 </div>

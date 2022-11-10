@@ -59,9 +59,6 @@
                   </div>
                 </th>
                 <th>
-                  <div class="form-group">
-                    <input type="text" name="vname" value="<?php echo $vname; ?>" id="vname" class="btn btn-outline-dark" placeholder="vehicle name" style="width: 110px;"/>
-                  </div>
                 </th>
                 <th>
                   <div class="form-group">

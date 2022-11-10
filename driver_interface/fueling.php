@@ -20,12 +20,12 @@
                             <form class="shadow form-row" style="font-weight:bold;" method="POST" action="../driver_interface/fueling_process.php">
                                 <h4 class="p-3 text-center">INPUT THE FUELING DETAILS</h4>
                                 <div class="col-sm form-group m-5">
-                                    <label for="fuel_litres">FUEL LITRES</label>
-                                    <input type="number" class="form-control bghover bg-light" name="fuel_litres"  id="fuel_litres" placeholder="e.g. 0.0"/>
+                                    <label for="v_fueltank">FUEL LITRES</label>
+                                    <input type="number" class="form-control bghover bg-light" name="v_fueltank"  id="v_fueltank" placeholder="e.g. 0.0 L"/>
                                 </div>
                                 <div class="col form-group m-5">
-                                    <label for="fuel_ksh">FUEL PRICE(ksh)</label>
-                                    <input type="number" class="form-control bghover bg-light" name="fuel_ksh"  id="fuel_ksh" placeholder="e.g. ksh 0.00"/>
+                                    <label for="fuelcost">FUEL PRICE(ksh)</label>
+                                    <input type="number" class="form-control bghover bg-light" name="fuelcost"  id="fuelcost" placeholder="e.g. ksh 0.00"/>
                                 </div>
                                 <div class="text-center">
                                     <button type="submit" name="submit" class="my-2 text-light btn btn-outline-dark btn-secondary">SUBMIT</button>

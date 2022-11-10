@@ -41,6 +41,7 @@ $d_data = $mysqli->query($data1);
                 </div>
                 <?php endif; ?>
                 <h4 class="my-3 text-start">Vehicles without drivers</h4>
+                
                 <table class="table">
                   <thead>
                     <tr>

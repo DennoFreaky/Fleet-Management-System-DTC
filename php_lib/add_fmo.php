@@ -26,23 +26,23 @@
                 ?>
                 <?php endif ?>
                 <div class="align-items-center">
-                        <h4 class="my-3 text-center">Driver regestration</h4>
+                        <h4 class="my-3 text-center">FMO regestration</h4>
                 </div>
                 <div class="row">
                     <div class="col-sm m-1">
-                        <p class="p-2"><b>Add New Driver</b></p><a class="text-end" href="../vehicle/v_assignment.php"><h5>Vehicle assignment</h5></a>
-                        <form class="form-row" style="font-weight:bold;"method="POST" action="../php_lib/drivers.php">
+                        <p class="p-2"><b>Add New Fleet Management Officer</b></p>
+                        <form class="form-row" style="font-weight:bold;"method="POST" action="../php_lib/fmo.php">
                             <div class="col form-group my-2">
                                 <label for="fname">First Name</label>
                                 <input type="text" class="form-control" name="fname"  id="fname" placeholder="first name"/>
                             </div>
                             <div class="col form-group my-2">
-                                <label for="sname">Second name</label>
+                                <label for="sname">Last Name</label>
                                 <input type="text" class="form-control" name="sname"  id="sname" placeholder="second name"/>
                             </div>
                             <div class="col form-group my-2">
-                                <label for="id_no">Id number</label>
-                                <input type="number" class="form-control" name="id_no"  id="id_no" placeholder="id number"/>
+                                <label for="id_no">FMO_ID Number</label>
+                                <input type="number" class="form-control" name="fmoid"  id="fmoid" placeholder="fmo id number"/>
                             </div>
                             <div class="col form-group my-2">
                                 <label for="branch">Branch</label>
@@ -59,7 +59,7 @@
                                 <input type="number" class="form-control" name="phone"  id="style" placeholder="vehicle-name"/>
                             </div>
                             <p></p>
-                            <h5>Create Driver Account</h5>
+                            <h5>Create FMO Account</h5>
                             <p></p>
                             <div class="col form-group my-2">
                                 <label for="email">Email</label>

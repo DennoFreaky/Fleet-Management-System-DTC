@@ -14,7 +14,7 @@
         <div class="signupbox">
             <h1> LOGIN AS: </h1>
                 <a href="../authentication/admin_login.php" ><input type="submit" value="Administrator"/></a>
-                <a href="../authentication/admin_login.php"><input type="submit" value="F.M.O"/></a>
+                <a href="../authentication/fmo_login.php"><input type="submit" value="F.M.O"/></a>
                 <a href="../php_lib/d_login.php"><input type="submit" value="Driver"/></a>
                 <a href="../index/landing_page.php">Go Back</a>
         </div>

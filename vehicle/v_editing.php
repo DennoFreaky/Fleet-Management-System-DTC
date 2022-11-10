@@ -22,9 +22,7 @@ if(isset($_GET['edit'])){
        $v_make = $vehicles_tbl['v_make'];
        $v_model = $vehicles_tbl['v_model'];
        $v_engine = $vehicles_tbl['v_engine'];
-       $v_style = $vehicles_tbl['v_style'];
 
-    
     } 
 
     if(isset($vehicles_tbl['update'])){
@@ -39,7 +37,6 @@ if(isset($_GET['edit'])){
         $v_make = $_POST['v_make'];
         $v_model = $_POST['v_model'];
         $v_engine = $_POST['v_engine'];
-        $v_style = $_POST['v_style'];
 
         $mysqli ->query("UPDATE vehicles_tbl SET 
                                                 v_name ='$v_name',
@@ -50,7 +47,6 @@ if(isset($_GET['edit'])){
                                                 v_make ='$v_make',
                                                 v_model ='$v_model',
                                                 v_engine ='$v_engine',
-                                                v_style ='$v_style',
                                                 WHERE id=$id") or die($mysqli->error);
 
     

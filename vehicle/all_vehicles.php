@@ -34,14 +34,12 @@
               <th>Vehicle name</th>
               <th>Driver</th>
               <th>VIN</th>
-              <th>Reg_number</th>
               <th>Branch</th>
               <th>License Plate</th>
               <th>Year</th>
               <th>Make</th>
               <th>Model</th>
               <th>Engine</th>
-              <th>Style</th>
               <th colspan="2">Action</th>
             </tr>
             <form method="post" action="../vehicle/v_form_process.php" id="">
@@ -52,14 +50,12 @@
               <th><input type="text" class="btn btn-outline-dark lg" name="v_name" value="<?php echo $v_name; ?>" id="v_name" placeholder="E.g mercedes" style="width:100px;"/></th>
               <th>Driver</th>
               <th><input type="text" class="btn btn-outline-dark lg" name="vin" value="<?php echo $vin; ?>" id="vin" placeholder="vin" style="width:100px;"/></th>
-              <th><input type="number" class="btn btn-outline-dark lg" name="v_reg" value="<?php echo $v_reg; ?>" id="v_reg" placeholder="v_reg" style="width:100px;"/></th>
               <th><input type="text" class="btn btn-outline-dark lg" name="v_branch" value="<?php echo $v_branch; ?>" id="v_branch" placeholder="v_branch" style="width:100px;"/></th>
               <th><input type="text" class="btn btn-outline-dark lg" name="license_plate" value="<?php echo $license_plate; ?>" id="license_plate" placeholder="licenseplate" style="width:100px;"/></th>
               <th><input type="text" class="btn btn-outline-dark lg" name="v_year" value="<?php echo $v_year; ?>" id="v_year" placeholder="v_year in km" style="width:100px;"/></th>
               <th><input type="text" class="btn btn-outline-dark lg" name="v_make" value="<?php echo $v_make; ?>" id="v_make" placeholder="v_make in km" style="width:100px;"/></th>
               <th><input type="text" class="btn btn-outline-dark lg" name="v_model" value="<?php echo $v_model; ?>" id="v_model" placeholder="v_model in km" style="width:100px;"/></th>
               <th><input type="text" class="btn btn-outline-dark lg" name="v_engine" value="<?php echo $v_engine; ?>" id="v_engine" placeholder="e.g 000hp" style="width:100px;"/></th>
-              <th><input type="text" class="btn btn-outline-dark lg" name="v_style" value="<?php echo $v_style; ?>" id="v_style" placeholder="style" style="width:100px;"/></th>
               <th colspan="2">
                 <?php if ($update == true):?>
                   <button type="submit" name="update" class="btn btn-secondary">Update</button>
@@ -75,15 +71,13 @@
                     <tr>
                       <td><?php echo $row['v_name']; ?></td>
                       <td><?php echo $row['driver']; ?></td>
-                      <td><?php echo $row['vin']; ?></td>
-                      <td><?php echo $row['v_reg']; ?></td>
+                      <td><?php echo $row['vin']; ?></td> 
                       <td><?php echo $row['v_branch']; ?></td>
                       <td><?php echo $row['license_plate']; ?></td>
                       <td><?php echo $row['v_year']; ?></td>
                       <td><?php echo $row['v_make']; ?></td>
                       <td><?php echo $row['v_model']; ?></td>
                       <td><?php echo $row['v_engine']; ?></td>
-                      <td><?php echo $row['v_style']; ?></td>
                       <td>
                         <a href="../vehicle/all_vehicles.php?edit=<?php echo $row['id']; ?>"
                           class="btn btn-info">Edit</a>

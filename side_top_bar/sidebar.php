@@ -1,7 +1,9 @@
 <?php 
 require_once '../authentication/loginsession.php';
 require_once '../side_top_bar/counter.php';
+
 $allvehicle = $mysqli->query("SELECT * FROM vehicles_tbl ORDER BY `vehicles_tbl`.`id` ASC") or die($mysqli->error);
+
 $result_assigned = $mysqli->query("SELECT * FROM vehicles_tbl WHERE driver != 'none' ") or die($mysqli->error);
 
 $result_unassigned = $mysqli->query("SELECT * FROM vehicles_tbl WHERE driver = 'none' ") or die($mysqli->error);
@@ -10,7 +12,9 @@ $nodriver = $mysqli->query("SELECT * FROM vehicles_tbl WHERE driver = 'none' ") 
 
 $fetch = $mysqli->query("SELECT * FROM drivers_tbl ORDER BY `drivers_tbl`.`fname` ASC") or die($mysqli->error);
 
-$novehicle = $mysqli->query("SELECT * FROM drivers_log WHERE v_name = 'none' ") or die($mysqli->error);
+$fmodetails = $mysqli->query("SELECT * FROM fmo_tbl ORDER BY `fmo_tbl`.`fname` ASC") or die($mysqli->error);
+
+$novehicle = $mysqli->query("SELECT * FROM drivers_tbl WHERE vname = 'none' ") or die($mysqli->error);
 
 ?>
 
@@ -36,8 +40,11 @@ src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
                             <div class="row">
                                 <div class="col-sm m-0">
                                     <p class="fw-bold account text-light" style="font-size:10px;">&nbsp;&nbsp;<?= ($mega_admin["username"]) ?>
-                    <?php else: ?>
-                                    <a href="../authentication/login.php">Log in</a>&nbsp;<span class="text-light">or</span>&nbsp;<a href="../authenticaton/signup.html">sign up</a></p>
+                    <?php elseif(isset($fmo_tbl)): ?>
+                                <p class="account text-light" style="font-size:10px;"><b><?= ($fmo_tbl["branch"]) ?></b>&nbsp;<a href="../authentication/logout.php"> Logout</a></p>
+                            <div class="row">
+                                <div class="col-sm m-0">
+                                    <p class="fw-bold account text-light" style="font-size:10px;">&nbsp;&nbsp;<?= ($fmo_tbl["fname"]) ?>
                     <?php endif; ?>
                                 </div>
                             </div>
@@ -58,11 +65,11 @@ src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
                                 <a href="../vehicle/v_unassigned.php">Vehicle assignment</a>
                             </div>
                             <?php if (isset($mega_admin)): ?>
-                            <a href="../php_lib/fmotable.php" class="text-light">Fleet Managemnet Officers</a>
+                            <a href="../php_lib/fmotbl.php" class="text-light">Fleet Managemnet Officers</a>
                             <a href="../php_lib/driverstable.php" class="text-light">Drivers</a>
                             <?php else: ?>
                                 <a href="../php_lib/driverstable.php" class="text-light">Drivers</a>
-                                <a href="../php_lib/driverstable.php" class="text-light">Vendors % Garage</a>
+                                <a href="../php_lib/driverstable.php" class="text-light">Vendors and Garage</a>
                             <?php endif; ?>
                             <a href="#"onclick="myFunction1()" class="dropbtn1 text-light" >Inspection</a>
                                 <div id="myDropdown1" class="dropdown-content1 shadow">

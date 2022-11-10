@@ -41,10 +41,6 @@
                                 <input type="text" class="form-control" name="vin"  id="vin" placeholder="vin-number"/>
                             </div>
                             <div class="form-group my-2">
-                                <label for="v_reg">V-regestration</label>
-                                <input type="number" class="form-control" name="v_reg"  id="vin" placeholder="vehicle company no"/>
-                            </div>
-                            <div class="form-group my-2">
                                 <label for="v_branch">Branch</label>
                                 <?php if (isset($mega_admin)): ?>
                                 <input type="text" class="form-control" name="v_branch"  value="<?= ($mega_admin["branch"]) ?>" id="v_branch" placeholder="branch"/>
@@ -65,10 +61,6 @@
                             <div class="form-group my-2">
                                 <label for="v_model">Model</label>
                                 <input type="text" class="form-control" name="v_model"  id="v_model" placeholder="model"/>
-                            </div>
-                            <div class="form-group my-2">
-                                <label for="v_style">Style</label>
-                                <input type="text" class="form-control" name="v_style"  id="v_style" placeholder="v_style"/>
                             </div>
                             <h4>Specific info</h4>
                             <div class="form-group my-2">

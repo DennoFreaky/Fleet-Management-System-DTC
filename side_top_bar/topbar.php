@@ -1,5 +1,5 @@
 <?php
-$loggedin = $mysqli->query("SELECT * FROM drivers_log") or die($mysqli->error);
+$loggedin = $mysqli->query("SELECT * FROM drivers_tbl") or die($mysqli->error);
 ?>
   <script src="../js/index.js"></script>
                 <div class="col-10 shadow py-1"style="position:fixed;z-index:1;height:50px;overflow:scroll;background-color:rgb(244, 243, 243);">
@@ -17,9 +17,13 @@ $loggedin = $mysqli->query("SELECT * FROM drivers_log") or die($mysqli->error);
                                 <a href="#"><b>Branch6</b></a>
                             </div>
                         </div>
+                        <?php if (isset($mega_admin)): ?>
                         <div class="col py-2 text-center">
                             <a href="../php_lib/d_login.php" class="dropbtn3 text-dark"><b class="m-1">Login as Driver</b></a>
                         </div>
+                        <?php else: ?>
+
+                        <?php endif; ?>
                         <div class="col py-2 text-center">
                             <a href="#" onclick="myFunction0()" class="dropbtn0 text-dark "><b class="m-1">ADD</b></a>
                             <div id="myDropdown0" class="dropdown-content0 shadow " style="position:fixed;">
