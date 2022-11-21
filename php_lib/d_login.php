@@ -48,14 +48,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <body class="my-3">
     <div class="mask">
         <div class="signupbox">
-            <h1> LOGIN HERE </h1>
+            <h1>DRIVER LOGIN </h1>
             <form action="" id="signup" method="post">
                 <label for="email"><p>Email</p></label>
                 <input type="text" name="email" value="<?= htmlspecialchars($_POST["email"] ?? "") ?>" id="email" placeholder="Enter your email"/>
                 <label for="password">Password</label>
                 <input type="password" name="password" id="password" placeholder="Enter Password"/>
                 <input type="submit" value="LOGIN"/>
-                <p> Dont have an account?</p>
+                <input type="button" class="backbutton" value="Go Back!" onclick="history.back()">
             </form>
         </div>
     </div>

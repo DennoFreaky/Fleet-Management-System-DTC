@@ -27,50 +27,61 @@
       </div>
       <?php endif ?>
       <div class="container py-2" style="overflow:scroll;">
-        <h2 class="my-5 text-center">All vehicles</h2>
+        <h2 class="my-5 text-center">All vehicles and Activity Status</h2>
         <table class="table">
           <thead>
             <tr>
-              <th>Vehicle name</th>
+              <th>Id</th>
+              <th>Name</th>
               <th>Driver</th>
+              <th>Status</th>
               <th>VIN</th>
               <th>Branch</th>
-              <th>License Plate</th>
+              <th>License_Plate</th>
               <th>Year</th>
               <th>Make</th>
               <th>Model</th>
               <th>Engine</th>
-              <th colspan="2">Action</th>
+              <?php if(isset($mega_admin)): ?>
+              <th colspan="2" >Action</th>
+              <?php else: endif; ?>
             </tr>
+            <?php if(isset($mega_admin)): ?>
             <form method="post" action="../vehicle/v_form_process.php" id="">
             <tr>
             <?php require_once '../vehicle/v_form_process.php';?>
             
               <input type="hidden" name="id" value="<?php echo $id; ?>">
-              <th><input type="text" class="btn btn-outline-dark lg" name="v_name" value="<?php echo $v_name; ?>" id="v_name" placeholder="E.g mercedes" style="width:100px;"/></th>
-              <th>Driver</th>
-              <th><input type="text" class="btn btn-outline-dark lg" name="vin" value="<?php echo $vin; ?>" id="vin" placeholder="vin" style="width:100px;"/></th>
+              <th><input type="number" class="btn btn-outline-dark lg" name="v_id" value="<?php echo $v_id; ?>" id="v_id" placeholder="id" style="width:100px;"/></th>
+              <th><input type="text" class="btn btn-outline-dark lg" name="v_id" value="<?php echo $v_name; ?>" id="v_name" placeholder="name" style="width:100px;"/></th>
+              <th></th>
+              <th ></th>
+              <th><input type="number" class="btn btn-outline-dark lg" name="vin" value="<?php echo $vin; ?>" id="vin" placeholder="vin" style="width:100px;"/></th>
               <th><input type="text" class="btn btn-outline-dark lg" name="v_branch" value="<?php echo $v_branch; ?>" id="v_branch" placeholder="v_branch" style="width:100px;"/></th>
               <th><input type="text" class="btn btn-outline-dark lg" name="license_plate" value="<?php echo $license_plate; ?>" id="license_plate" placeholder="licenseplate" style="width:100px;"/></th>
-              <th><input type="text" class="btn btn-outline-dark lg" name="v_year" value="<?php echo $v_year; ?>" id="v_year" placeholder="v_year in km" style="width:100px;"/></th>
+              <th><input type="text" class="btn btn-outline-dark lg" name="v_year" value="<?php echo $v_year; ?>" id="v_year" placeholder="v_year in km" style="width:50px;"/></th>
               <th><input type="text" class="btn btn-outline-dark lg" name="v_make" value="<?php echo $v_make; ?>" id="v_make" placeholder="v_make in km" style="width:100px;"/></th>
               <th><input type="text" class="btn btn-outline-dark lg" name="v_model" value="<?php echo $v_model; ?>" id="v_model" placeholder="v_model in km" style="width:100px;"/></th>
-              <th><input type="text" class="btn btn-outline-dark lg" name="v_engine" value="<?php echo $v_engine; ?>" id="v_engine" placeholder="e.g 000hp" style="width:100px;"/></th>
-              <th colspan="2">
+              <th><input type="number" class="btn btn-outline-dark lg" name="v_engine" value="<?php echo $v_engine; ?>" id="v_engine" placeholder="e.g 000hp" style="width:50px;"/></th>
+              <th colspan="">
                 <?php if ($update == true):?>
-                  <button type="submit" name="update" class="btn btn-secondary">Update</button>
+                  <input type="submit" class="btn btn-secondary" name="update" Value="UPDATE" class="btn btn-secondary">
                 <?php else: ?>
-                  <b class="btn btn-sm btn-secondary">Click edit to Update</b>
+                  <b class="btn btn-sm btn-secondary">Click Edit</b>
                 <?php endif; ?>
               </th>
             </tr>
+            <?php else: endif; ?>
+            
             </form>
           </thead>
           <tbody>
             <?php while($row = $allvehicle->fetch_assoc()): ?>           
                     <tr>
+                      <td><?php echo $row['v_id']; ?></td>
                       <td><?php echo $row['v_name']; ?></td>
-                      <td><?php echo $row['driver']; ?></td>
+                      <td><b><?php echo $row['driver']; ?></b></td>
+                      <?php if($row['status']!== 'All Good'): ?><td class="text-danger fw-bold" style="width:100px;"><?php echo $row['status']; ?></td><?php else: ?><td class="text-success fw-bold" style="width:100px;"><?php echo $row['status']; ?></td><?php endif; ?>
                       <td><?php echo $row['vin']; ?></td> 
                       <td><?php echo $row['v_branch']; ?></td>
                       <td><?php echo $row['license_plate']; ?></td>
@@ -78,18 +89,21 @@
                       <td><?php echo $row['v_make']; ?></td>
                       <td><?php echo $row['v_model']; ?></td>
                       <td><?php echo $row['v_engine']; ?></td>
-                      <td>
+                      <?php if(isset($mega_admin)): ?>
+                      <td style="width:110px;">
                         <a href="../vehicle/all_vehicles.php?edit=<?php echo $row['id']; ?>"
-                          class="btn btn-info">Edit</a>
+                         class="btn-sm btn-info">Edit</a>
                         <a href="../vehicle/v_form_process.php?delete=<?php echo $row['id']; ?>"
-                          class="btn btn-danger">Delete</a>                       
+                          class="btn-sm btn-danger">Delete</a>                       
                       </td>  
+                      <?php else: endif; ?>
                     </tr>
             <?php endwhile; ?>
 
           </tbody>
           
         </table>
+
       
       </div>
     </div>

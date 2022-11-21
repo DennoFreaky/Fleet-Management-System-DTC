@@ -4,12 +4,12 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../bootstrap-5.0.0-dist/css/bootstrap.css">
-    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/driverinterface.css">
     <link rel="stylesheet" href="../css/dropdown.css">
     <title>MEGA_DRIVER</title>
 
 </head>
-<body class="mobile">
+<body>
     <div class="d-flex">
         <div class="col">
             <?php require_once '../driver_interface/sidetop_bar/topbar.php' ?>
@@ -17,8 +17,27 @@
                 <div class="rowtwo"> 
                     <div class="row">
                         <div class="col m-1 rounded bg-transparent">
-                            <form class="shadow form-row" style="font-weight:bold;" method="POST" action="../driver_interface/inspection_process.php">
+                            <?php require_once '../driver_interface/inspection_process.php'; ?>
+                            <form class="shadow form-row" style="font-weight:bold;" id="inspection" method="POST" action="../driver_interface/inspection_process.php">
+                                <?php if (isset($drivers_tbl)): ?>
+                                    <input type="hidden" name="driver" value="<?= ($drivers_tbl["id_no"]) ?>"/>
+                                <?php endif; ?>
+                                <?php if($row1 = $status->fetch_assoc()): ?>
+                                    <input type="hidden" name="status" value="<?php if($row1['window'or 'side_mirrors'or 'door'or 'reflector'or 'rims'or 'tirepressure'or 'headlight'or 'highbeam'or 'hazard'or 'turnsignals'or 'seatbelt'or 'windshield_wipers'or 'gauges'] == 'Good' or 'n/a' ){ echo "All Good" ;} else {  echo "Had Repairs Done"; } ?>"/>
+                                <?php endif; ?>
+                                <?php if($row = $allvehicle->fetch_assoc()): ?>
+                                    <input type="hidden" name="v_id" value="<?php echo $row['v_id']; ?>"/>
+                                    <input type="hidden" name="v_name" value="<?php echo $row['v_name']; ?>"/>
+                                    <?php date_default_timezone_set('Africa/Nairobi') == $date; $date = date("Y-m-d\TH:i"); ?>
+                                    <input type="hidden" name="inspection_time" value="<?= $date ?>"/>
+                                <?php endif; ?>
+                                <input type="hidden" name="id" value="<?php echo $id; ?>"/>
                                 <h4 class="p-3 text-center">INSPECTION CHECKLIST</h4>
+                                
+                                <?php if($submit == true): ?>
+                                    <h6 class="text-center text-danger">Inspection in progress..</h6>
+                                <?php else: ?>
+                                <?php endif; ?>
                                 <hr>
                                 <h5 class="p-2 text-center">Walk-around Inspection</h5>
                                 <div class="col-sm form-group m-5">
@@ -275,10 +294,14 @@
                                     </div>
                                 </div>
                                 <div class="text-center">
+                                <?php if($submit == true): ?>
                                     <button type="submit" name="submit" class="my-2 text-light btn btn-outline-dark btn-secondary">SUBMIT</button>
+                                <?php else: ?>
+                                <?php endif; ?>
                                 </div>
                             </form>
                         </div> 
+
                     </div>
                 </div>
             </div>

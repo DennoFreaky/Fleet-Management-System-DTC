@@ -14,7 +14,7 @@
         <div class="signupbox">
             <h1> SIGUNP AS: </h1>
             <a href="../authentication/signup.html" ><input type="submit" value="Administrator"/></a>
-            <a href="../authentication/signup.html"><input type="submit" value="F.M.O"/></a>
+            <a href="../authentication/fmo_signup.html"><input type="submit" value="F.M.O"/></a>
             <a href="../index/landing_page.php">Go Back</a>
         </div>
     </div>

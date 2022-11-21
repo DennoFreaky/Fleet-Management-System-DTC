@@ -1,0 +1,96 @@
+body{
+    background-image: linear-gradient( rgb(197, 220, 236), rgb(216, 202, 223));
+}
+body a{
+    text-decoration: none;
+    color:rgb(123, 105, 82);
+}
+.rowtwo{
+    margin-top: 55px;
+}
+.backbutton{
+    margin-top: 65px;
+}
+
+.rowthree{
+    margin-top: 50px;
+}
+.v_index{
+    margin: 0px;
+}
+.mobilehomepage{
+    margin: 20px;
+    margin-top: 30px;
+    
+}
+.homepage{
+    margin: 0px;
+}
+
+.topshadow{
+    margin-top: 0px;
+    margin-left: 0px;
+}
+.mobile{
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding:0px;
+    margin:0px;
+    
+}
+.m-left{
+    margin-left: 0px;
+    margin-right: 2px;
+    padding: 0px;
+}
+
+.m-right{
+    margin-left: 2px;
+    margin-right: 0px;
+    padding: 0px;
+}
+.logout{
+    margin-top: 0px;
+    margin-left:10px;
+}
+.drivername{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left:10px;
+}
+.vname{
+    margin: 10px;
+}
+
+.account a{
+    color:rgb(61, 54, 44);
+	text-decoration: none;
+    padding-top: 2px;
+    padding-bottom:10px;
+	display: block;
+}
+
+.dropdown-content4 {
+    display: none;
+    }
+
+    .dropdown-content4 a {
+      padding-top: 2px;
+      padding-bottom:10px ;
+      display: block;
+      color: rgb(0, 0, 0);
+    }
+    
+    .dropdown-content5 {
+        display: none;
+        }
+        
+        .dropdown-content5 a {
+          padding-top: 2px;
+          padding-bottom:10px ;
+        text-decoration: none;
+        display: block;
+        color: rgb(0, 0, 0);
+        }
+
+.show {display:block;}

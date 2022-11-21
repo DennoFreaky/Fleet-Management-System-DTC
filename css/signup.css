@@ -93,3 +93,16 @@ h1{
 {
 	color: #ffc107;
 }
+.backbutton{
+	font-weight: bold;
+    border-radius:10px;
+	width:100px;
+	color:rgb(139, 117, 91);
+	background: rgba(0, 0, 0, 0.705);
+}
+.backbutton input[type="button"]:hover{
+	cursor: pointer;
+	color: #30302e;
+	background:rgb(160, 124, 80);
+	
+}

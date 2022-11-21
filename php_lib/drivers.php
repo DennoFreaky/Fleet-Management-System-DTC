@@ -74,7 +74,7 @@ if(isset($_GET['edit'])){
         $email =$_POST['email'];
 
         $conn = require __DIR__ . "../../authentication/mega_db.php";
-        $conn ->query("UPDATE drivers_tbl SET fname='$fname',sname='$sname',id_no='$id_no',,branch='$branch',address='$address',phone ='$phone',email='$email' WHERE id=$id") or die($conn->error);
+        $conn ->query("UPDATE drivers_tbl SET fname='$fname',sname='$sname',id_no='$id_no',branch='$branch',address='$address',phone ='$phone',email='$email' WHERE id=$id") or die($conn->error);
     
         $_SESSION['message'] = "Record has been Updated!";
         $_SESSION['msg_type'] = "warning";

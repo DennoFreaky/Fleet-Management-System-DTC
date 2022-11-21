@@ -4,12 +4,12 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../bootstrap-5.0.0-dist/css/bootstrap.css">
-    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/driverinterface.css">
     <link rel="stylesheet" href="../css/dropdown.css">
     <title>MEGA_DRIVER</title>
 
 </head>
-<body class="mobile" style="height:100vh;">
+<body>
     <div class="d-flex">
         <div class="col">
             <?php require_once '../driver_interface/sidetop_bar/topbar.php' ?>

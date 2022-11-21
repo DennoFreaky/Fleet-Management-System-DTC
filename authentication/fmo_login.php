@@ -42,20 +42,20 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../css/signup.css">
-    <title>Mega Drivers LOGIN</title>
+    <title>MEGA FMO LOGIN</title>
 
 </head>
 <body class="my-3">
     <div class="mask">
         <div class="signupbox">
-            <h1> LOGIN HERE </h1>
+            <h1> FMO LOGIN </h1>
             <form action="" id="signup" method="post">
                 <label for="email"><p>Email</p></label>
                 <input type="text" name="email" value="<?= htmlspecialchars($_POST["email"] ?? "") ?>" id="email" placeholder="Enter your email"/>
                 <label for="password">Password</label>
                 <input type="password" name="password" id="password" placeholder="Enter Password"/>
                 <input type="submit" value="LOGIN"/>
-                <p> Dont have an account?</p>
+                <input type="button" class="backbutton" value="Go Back!" onclick="history.back()">
             </form>
         </div>
     </div>

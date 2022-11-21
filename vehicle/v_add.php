@@ -17,61 +17,71 @@
         <div class="col"  >
                 <?php require '../side_top_bar/topbar.php';?>
             <div class="container p-5" id="newform">
-            <?php 
-                if (isset($_SESSION['message_truck'])):?>
-                <div class="alert alert-<?= $_SESSION['msg_type']?>">
-                <?php
-                echo $_SESSION['message_truck'];
-                unset($_SESSION['message_truck']);
-                ?>
-            <?php endif ?>
                 <div class="align-items-center">
-                        <h5 class="my-3 text-center">Vehicle regestration</h5>
+                        <h5 class="my-3 text-center">Vehicle registration</h5>
                 </div>
                 <div class="row">
                     <div class="col-md-8 m-1 shadow" >
-                        <form class="form-row" method="post" style="font-weight:bold;" action="../vehicle/v_form_process.php">
-                            <h4>General info</h4>
-                            <div class="form-group my-2">
-                                <label for="v_name">Vehicle Name</label>
-                                <input type="text" name="v_name" class="form-control"id="v_name" placeholder="E.g mercedes"/>
-                            </div>
-                            <div class="form-group my-2">
-                                <label for="vin">Vin</label>
-                                <input type="text" class="form-control" name="vin"  id="vin" placeholder="vin-number"/>
-                            </div>
-                            <div class="form-group my-2">
-                                <label for="v_branch">Branch</label>
-                                <?php if (isset($mega_admin)): ?>
-                                <input type="text" class="form-control" name="v_branch"  value="<?= ($mega_admin["branch"]) ?>" id="v_branch" placeholder="branch"/>
+                        <form class="form-row" style="font-weight:bold;"method="POST" action="../vehicle/v_form_process.php">
+                            <h5>Identifier details</h5>
+                            <div class="col form-group my-2">
+                                <label for="v_id">Vehicle ID</label>
+                                <?php if($row = $lastvehicle->fetch_assoc()):?>
+                                <input type="number" class="form-control" name="v_id" value="<?php echo $row['v_id'] + $i = 1;?>"  id="v_id" placeholder="vehicle Id"/>
+                                <?php else: ?>
+                                <input type="number" class="form-control" name="v_id" value="11001"  id="v_id" placeholder="vehicle Id"/>
                                 <?php endif; ?>
                             </div>
-                            <div class="form-group my-2">
-                                <label for="license_plate">Licence Plate </label>
-                                <input type="text" class="form-control" name="license_plate"  id="license_plate" placeholder="license_plate"/>
+                            <div class="col form-group my-2">
+                                <label for="vin">Vin number</label>
+                                <input type="number" class="form-control" name="vin"  id="vin" placeholder="vehicle identity number"/>
                             </div>
-                            <div class="form-group my-2">
+                            <div class="col form-group my-2">
+                                <label for="v_name">Vehicle Name</label>
+                                <input type="text" class="form-control" name="v_name"  id="v_name" value=""  placeholder="Vehicle name"/>
+                            </div>
+                            <div class="col form-group my-2">
+                                <label for="license_plate">License Plate</label>
+                                <input type="text" class="form-control" name="license_plate"  id="license_plate" placeholder="e.g KBY 893T"/>
+                            </div>
+                            <h5>General Information</h5>
+                            <div class="col form-group my-2">
+                                <label for="v_branch">Branch</label>
+                                <?php if (isset($mega_admin)): ?>
+                                <input type="text" class="form-control" name="v_branch" value="<?= ($mega_admin["branch"]) ?>"  id="v_branch" placeholder="v_branch"/>
+                                <?php elseif (isset($fmo_tbl)): ?>
+                                <input type="text" class="form-control" name="v_branch" value="<?= ($fmo_tbl["branch"]) ?>"  id="v_branch" placeholder="v_branch"/> 
+                                <?php endif; ?>
+                            </div>
+                            <div class="col form-group my-2">
+                                <label for="mileage">Mileage</label>
+                                <input type="number" class="form-control" name="mileage"  id="mileage" placeholder="driven distance"/>
+                            </div>
+                            <div class="col form-group my-2">
+                                <label for="status">Status</label>
+                                <input type="text" class="form-control" name="status" value="NEW!"  id="status" placeholder="id number"/>
+                            </div>
+                            <div class="col form-group my-2">
                                 <label for="v_year">Year</label>
                                 <input type="text" class="form-control" name="v_year"  id="v_year" placeholder="year"/>
                             </div>
-                            <div class="form-group my-2">
-                                <label for="v_make">Vehicle_Make</label>
+                            <div class="col form-group my-2">
+                            <label for="v_make">Vehicle Make</label>
                                 <input type="text" class="form-control" name="v_make"  id="v_make" placeholder="vehicle-make"/>
                             </div>
-                            <div class="form-group my-2">
-                                <label for="v_model">Model</label>
-                                <input type="text" class="form-control" name="v_model"  id="v_model" placeholder="model"/>
+                            <div class="col form-group my-2">
+                                <label for="v_model">Vehicle Model</label>
+                                <input type="text" class="form-control" name="v_model"  id="v_model" placeholder="vehicle model"/>
                             </div>
-                            <h4>Specific info</h4>
-                            <div class="form-group my-2">
-                                <label for="v_engine">Engine</label>
-                                <input type="text" class="form-control" name="v_engine"  id="v_engine" placeholder="engine"/>
+                            <div class="col form-group my-2">
+                                <label for="v_engine">Vehicle Engine</label>
+                                <input type="number" class="form-control" name="v_engine"  id="v_engine" placeholder="Horse Power(HP)"/>
                             </div>
-                            <h4>Others</h4>
-                            <button type="submit" name="submit" class="my-2 text-light btn btn-outline-dark btn-secondary">Submit</button>
+                            <h5>Specific Details</h5>
+                            <div class="text-center form-group my-2">
+                                <button type="submit" name="submit" class="my-2 text-light btn btn-outline-dark btn-secondary">Submit</button>
+                            </div>
                         </form>
-
-                        
                     </div>
                     <div class="col-sm m-1 shadow">
                         <p class="p-2"><b>Add vehicle using Vehicle Identification Number(VIN)</b></p>

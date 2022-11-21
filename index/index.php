@@ -9,14 +9,14 @@
     <title>DIGI_TRANS</title>
 
 </head>
-<body class="mycontainer" >
+<body class="mycontainer">
 
-    <div class="d-flex shadow">
+    <div class="d-flex">
         
         <?php require_once '../side_top_bar/sidebar.php';?>
         <div class="col">
                 <?php require '../side_top_bar/topbar.php';?>
-            <div class="container py-5" id="newform">
+            <div class="container py-5" id="newform" style="position:relative;d-index:1;">
                 <div class="my-1">
                     <h4 class="fw-bold">Dashboard</h4>
                 </div>
@@ -32,7 +32,6 @@
                         </div>
                         <hr>
                         <div class="row">
-                            
                             <div class="col m-1">
                             <a href="../vehicle/all_vehicles.php">All vehicles</a>
                             </div>
@@ -40,7 +39,7 @@
                             <div class="col  m-1 text-end">
                                 <h5 class=" text-primary">
                                 <?php if ($rowcount == 0) { ?>
-                                    <h6 class="m-2 text-success"><?php echo $rowcount ?> </h6>
+                                    <h6 class="m-2 text-danger"><?php echo $rowcount ?> </h6>
                                 <?php }else{ ?>
                                     <h6 class="m-2 text-primary"> <?php echo $rowcount ?></h6>
                                 <?php } ?>
@@ -51,7 +50,7 @@
                                 <a href="">Active</a>
                             </div>
                             <div class="col m-1 text-end">
-                                <p id="">Details</p>
+                                <h6 class="m-2 text-primary"> <?php echo $rowcount5 ?></h6>
                             </div>
                         </div>
                         <div class="row">
@@ -59,7 +58,7 @@
                                 <a href="">Out of service</a>
                             </div>
                             <div class="col m-1 text-end">
-                                <p class="">Details</p>
+                                <h6 class="m-2 text-primary"> <?php echo $rowcount4 ?></h6>
                             </div>
                         </div>
                         <hr>
@@ -75,7 +74,7 @@
                             <div class="row">
                                 <canvas id="myChart1" style="width:100%;max-width:700px"></canvas>
                                 <script>
-                                    var xValues = ["Monday","Tuesday","Wednesday","Thursday","Friday","Suturday"];
+                                    var xValues = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
                                     
                                     new Chart("myChart1", {
                                       type: "line",
@@ -103,7 +102,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md shadow m-1 rounded bg-light">
+                    <div class="col-md-4 shadow m-1 rounded bg-light">
                         <div class="row">
                             <div class="col fw-bold m-1">
                                 <p>Service/Repair cost</p>
@@ -149,7 +148,7 @@
                                     </div>
                                 </div>
                                 <a href="">
-                                    <div class="row m-3 rounded-pill shadow">
+                                    <div class="row m-3 rounded alert-danger shadow">
                                         <div class="col text-center fw-bold m-1">
                                             <p class="m-2">Vehicle Overdue</p>
                                         </div>
@@ -159,7 +158,7 @@
                                     </div>
                                 </a>
                                 <a href="">
-                                    <div class="row m-3 rounded-pill shadow">
+                                    <div class="row m-3 rounded shadow">
                                         <div class="col text-center fw-bold m-1">
                                             <p class="m-2">Due-soon</p>
                                         </div>
@@ -171,37 +170,38 @@
                             </div>
                         </div>
                     </div>
+                    
                     <div class="col-md ">
                         <div class="row">
                             <div class="col-sm shadow m-1 rounded bg-light">
                                 <div class="row">
                                     <div class="col fw-bold m-1">
-                                        <p>Issues</p>
+                                        <p>Inspections and Fueling</p>
                                     </div>
                                 </div>
-                                <a href="">
-                                    <div class="row m-3 rounded-pill shadow">
+                                <a href="../php_lib/allhistory.php">
+                                    <div class="row m-3 rounded shadow">
                                         <div class="col text-center fw-bold m-1">
-                                            <p class="m-2">Open Issues</p>
+                                            <p class="m-2">New Unqualified Inspection</p>
                                         </div>
                                         <div class="col text-center fw-bold m-1 ">
-                                            <p class="m-2 danger">2</p>
+                                        <?php if ($rowcount4 == 5) { ?>
+                                            <h6 class="m-2  text-danger"><?php echo $rowcount4 ?> </h6>
+                                            <?php }else{ ?>
+                                            <h6 class="m-2 text-primary"><?php echo $rowcount4 ?></h6>
+                                            <?php } ?>
                                         </div>
                                     </div>
                                 </a>
-                                <a href="">
-                                    <div class="row m-3 rounded-pill shadow">
+                                <a href="../php_lib/allhistory.php">
+                                    <div class="row m-3 rounded shadow">
                                     <?php if (isset($mega_admin)): ?>
                                         <div class="col text-center fw-bold m-1">
-                                            <p class="m-2">Solved Issues</p>
-                                        </div>
-                                    <?php else: ?>
-                                        <div class="col text-center fw-bold m-1">
-                                            <p class="m-2">Overdue</p>
+                                            <p class="m-2">Recent Fueling</p>
                                         </div>
                                     <?php endif; ?>
                                         <div class="col text-center fw-bold m-1 ">
-                                            <p class="m-2 danger">0</p>
+                                            <h6 class="m-2 text-primary"><?php echo $rowcount6 ?></h6>
                                         </div>
                                     </div>
                                 </a>
@@ -213,21 +213,21 @@
                                     </div>
                                 </div>
                                 <a href="../vehicle/v_assigned.php">
-                                    <div class="row m-3 rounded-pill shadow">
+                                    <div class="row m-3 rounded shadow">
                                         <div class="col text-center fw-bold m-1">
                                             <p class="m-2">Assigned</p>
                                         </div>
                                         <div class="col text-center fw-bold m-1 ">
                                         <?php if ($rowcount2 == 0) { ?>
-                                            <h6 class="m-2 text-success"><?php echo $rowcount2 ?> </h6>
+                                            <h6 class="m-2  text-danger"><?php echo $rowcount2 ?> </h6>
                                         <?php }else{ ?>
                                             <h6 class="m-2 text-primary"> <?php echo $rowcount2 ?></h6>
                                         <?php } ?>
                                         </div>
                                     </div>
                                 </a>
-                                <a href="../vehicle/v_unassigned.php">
-                                    <div class="row m-3 rounded-pill shadow">
+                                <a href="../vehicle/v_unassigned.php#nodriver">
+                                    <div class="row m-3 rounded shadow">
                                         <div class="col text-center fw-bold m-1">
                                             <p class="m-2">Unassigned </p>
                                         </div>
@@ -235,37 +235,33 @@
                                         <?php if ($rowcount1 == 0) { ?>
                                             <h6 class="m-2 text-success"><?php echo $rowcount1 ?> </h6>
                                         <?php }else{ ?>
-                                            <h6 class="m-2 text-primary"> <?php echo $rowcount1 ?></h6>
+                                            <h6 class="m-2 text-primary"> <?php echo $rowcount1 ?> (Vehicle)</h6>
                                         <?php } ?>
                                         </div>
                                     </div>
                                 </a>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-sm shadow m-1 rounded bg-light">
-                                <div class="row">
-                                    <div class="col fw-bold m-1">
-                                        <p>Service Reminders</p>
-                                    </div>
-                                </div>
-                                <a href="">
-                                    <div class="row m-3 rounded-pill shadow">
+                                <a href="../vehicle/v_unassigned.php#novehicle">
+                                    <?php if ($rowcount3 !== 0) { ?>
+                                    <div class="row m-3 rounded shadow">
                                         <div class="col text-center fw-bold m-1">
-                                            <p class="m-2">Vehicle Overdue-soon</p>
+                                            <p class="m-2">Unassigned </p>
                                         </div>
                                         <div class="col text-center fw-bold m-1 ">
-                                            <p class="m-2 danger">5</p>
+                                        <?php if ($rowcount3 !== 0) { ?>
+                                            <h6 class="m-2 text-info"><?php echo $rowcount3 ?> (driver)</h6>
+                                        <?php } ?>
                                         </div>
                                     </div>
+                                    <?php } else { ?>
+                                    <?php } ?>
                                 </a>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            
+            </div>    
+            <hr>  
         </div>
-        
+    </div>
 </body>
 </html>

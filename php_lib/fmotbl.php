@@ -29,7 +29,7 @@
 
     
       <div class="container-md my-5" style="overflow-y:hidden">
-        <h2 class="my-5 text-center">All regestered drivers</h2>
+        <h2 class="my-5 text-center">Regestered Fleet Management Officer</h2>
         <table class="table">
           <thead>
             <tr>
@@ -40,7 +40,58 @@
               <th>Branch</th>
               <th>Phone_Number</th>
               <th>Email</th>
+              <?php if (isset($mega_admin)): ?>
               <th col-span="2" >Action</th>
+              <?php else: endif; ?>
+            </tr>
+            <tr>
+            <?php require_once '../php_lib/fmo.php'; ?>
+            <form method="post" id="fmo_tbl" action="../php_lib/fmo.php" class="my-5">
+              <input type="hidden" name="id" value="<?php echo $id; ?>">
+              <th>
+                <div class="form-group">
+                  <input type="text" name="fname" value="<?php echo $fname; ?>" id="" class="btn btn-outline-dark" placeholder="First name" style="width: 100px;"/>
+                </div>
+              </th>
+              <th>
+                <div class="form-group">
+                  <input type="text" name="sname" value="<?php echo $sname; ?>" id="" class="btn btn-outline-dark" placeholder="First name" style="width: 100px;"/>
+                </div>
+              </th> 
+              <th>
+                <div class="form-group">
+                  <input type="text" name="fmoid" value="<?php echo $fmoid; ?>" id="" class="btn btn-outline-dark" placeholder="First name" style="width: 100px;"/>
+                </div>
+              </th>
+              <th>
+                <div class="form-group">
+                  <input type="text" name="address" value="<?php echo $address; ?>" id="" class="btn btn-outline-dark" placeholder="First name" style="width: 100px;"/>
+                </div>
+              </th>
+              <th>
+                <div class="form-group">
+                  <input type="text" name="branch" value="<?php echo $branch; ?>" id="" class="btn btn-outline-dark" placeholder="First name" style="width: 100px;"/>
+                </div>
+              </th>
+              <th>
+                <div class="form-group">
+                  <input type="text" name="phone" value="<?php echo $phone; ?>" id="" class="btn btn-outline-dark" placeholder="First name" style="width: 100px;"/>
+                </div>
+              </th>
+              <th>
+                <div class="form-group">
+                  <input type="text" name="email" value="<?php echo $email; ?>" id="" class="btn btn-outline-dark" placeholder="First name" style="width: 100px;"/>
+                </div>
+              </th>
+              <th>
+                    <?php
+                    if ($update == true):?>
+                      <button type="submit" name="update" style="width:120px;font-size:14px;" class="btn btn-secondary">UPDATE</button>
+                    <?php else: ?>
+                      <b class="btn btn-sm btn-secondary"style="width:110px;font-size:12px;">click edit to update</b>
+                    <?php endif; ?>
+                </th>
+            </form>
             </tr>
           </thead>
           <tbody>
@@ -54,13 +105,14 @@
                         <td><?php echo $row["branch"]; ?></td>
                         <td><?php echo $row["phone"]; ?></td>
                         <td><?php echo $row["email"]; ?></td>
-                        
+                        <?php if (isset($mega_admin)): ?>
                         <td>
                         <a href="../php_lib/fmotbl.php?edit=<?php echo $row['id']; ?>"
                             class="btn btn-info" >Edit</a>
                         <a href="../php_lib/fmo.php?delete=<?php echo $row['id']; ?>"
                             class="btn btn-danger">Delete</a>                       
                         </td>
+                        <?php else: endif; ?>
                         
                     </tr>
                 <?php endwhile; ?>

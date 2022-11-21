@@ -30,7 +30,7 @@
                 </div>
                 <div class="row">
                     <div class="col-sm m-1">
-                        <p class="p-2"><b>Add New Driver</b></p><a class="text-end" href="../vehicle/v_assignment.php"><h5>Vehicle assignment</h5></a>
+                        <p class="p-2"><b>Add New Driver</b></p><a class="text-end" href="../vehicle/v_unassigned.php"><h5>Vehicle assignment</h5></a>
                         <form class="form-row" style="font-weight:bold;"method="POST" action="../php_lib/drivers.php">
                             <div class="col form-group my-2">
                                 <label for="fname">First Name</label>
@@ -48,6 +48,8 @@
                                 <label for="branch">Branch</label>
                                 <?php if (isset($mega_admin)): ?>
                                 <input type="text" class="form-control" name="branch" value="<?= ($mega_admin["branch"]) ?>"  id="branch" placeholder="branch"/>
+                                <?php elseif (isset($fmo_tbl)): ?>
+                                <input type="text" class="form-control" name="branch" value="<?= ($fmo_tbl["branch"]) ?>"  id="branch" placeholder="branch"/> 
                                 <?php endif; ?>
                             </div>
                             <div class="col form-group my-2">

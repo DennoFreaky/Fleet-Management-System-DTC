@@ -31,7 +31,6 @@
                         <th>License Plate</th>
                         <th>Model</th>
                         <th>Engine</th>
-                        <th colspan="2">Action</th>
                       </tr>
                       
                     </thead>
@@ -44,12 +43,7 @@
                                 <td><?php echo $row1['license_plate']; ?></td>
                                 <td><?php echo $row1['v_model']; ?></td>
                                 <td><?php echo $row1['v_engine']; ?></td>
-                                <td>
-                                  <a href="../vehicle/v_unassigned.php?edit=<?php echo $row['id']; ?>"
-                                    class="editbtn btn">Edit</a>
-                                  <a href="../vehicle/v_assignment_tbl/v_assign_process.php?delete=<?php echo $row['id']; ?>"
-                                    class="btn btn-danger">Delete</a>                       
-                                </td>  
+
                               </tr>
                       <?php endwhile; ?>
           

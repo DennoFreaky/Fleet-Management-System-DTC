@@ -16,7 +16,7 @@
                 <a href="../authentication/admin_login.php" ><input type="submit" value="Administrator"/></a>
                 <a href="../authentication/fmo_login.php"><input type="submit" value="F.M.O"/></a>
                 <a href="../php_lib/d_login.php"><input type="submit" value="Driver"/></a>
-                <a href="../index/landing_page.php">Go Back</a>
+                <input type="button" class="backbutton" value="Go Back!" onclick="history.back()">
         </div>
     </div>
 </body>

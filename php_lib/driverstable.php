@@ -42,8 +42,11 @@
               <th>Reg_number</th>
               <th>Email</th>
               <th>Phone_Number</th>
+              <?php if (isset($mega_admin)): ?>
               <th col-span="2" >Action</th>
+              <?php else: endif;?>
             </tr>
+            <?php if (isset($mega_admin)): ?>
             <tr>
             <?php require_once '../php_lib/drivers.php'; ?>
               <form method="post" id="driver_form" action="../php_lib/drivers.php" class="my-5">
@@ -100,6 +103,8 @@
                 </th>
                     </form>
             </tr>
+            <?php else: endif;?>
+
           </thead>
           <tbody>
             <?php
@@ -114,12 +119,14 @@
                         <td><?php echo $row["reg_no"]; ?></td>
                         <td><?php echo $row["email"]; ?></td>
                         <td><?php echo $row["phone"]; ?></td>
+                        <?php if (isset($mega_admin)): ?>
                         <td>
                         <a href="../php_lib/driverstable.php?edit=<?php echo $row['id']; ?>"
                             class="btn btn-info" >Edit</a>
                         <a href="../php_lib/drivers.php?delete=<?php echo $row['id']; ?>"
                             class="btn btn-danger">Delete</a>                       
                         </td>
+                        <?php else: endif;?>
                         
                     </tr>
                 <?php endwhile; ?>
