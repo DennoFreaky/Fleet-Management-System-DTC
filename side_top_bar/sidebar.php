@@ -1,11 +1,16 @@
 <?php 
 require_once '../authentication/loginsession.php';
 require_once '../side_top_bar/counter.php';
-
+//gets all vehicle data from the vehicle_tbl
 $allvehicle = $mysqli->query("SELECT * FROM vehicles_tbl ORDER BY `vehicles_tbl`.`id` ASC") or die($mysqli->error);
+
+//gets all active vehicles from vehicles_tbl using their status
 $activevehicles = $mysqli->query("SELECT * FROM vehicles_tbl WHERE status='All Good' ") or die($mysqli->error);
+
+//gets all inactive vehicles from vehicles_tbl using their status
 $inactivevehicles = $mysqli->query("SELECT * FROM vehicles_tbl WHERE status != 'All Good' ") or die($mysqli->error);
 
+//gets data of last vehicles  vehicles from vehicles_tbl
 $lastvehicle = $mysqli->query("SELECT * FROM vehicles_tbl WHERE id=(SELECT max(id) FROM vehicles_tbl)") or die($mysqli->error);
 
 $result_assigned = $mysqli->query("SELECT * FROM vehicles_tbl WHERE driver != 'none' ") or die($mysqli->error);
@@ -26,7 +31,7 @@ $v_unassigned = $mysqli->query ("SELECT * FROM drivers_tbl WHERE vname = 'none'"
 //getting data all regestered garages
 $garages = $mysqli->query("SELECT * FROM garage_tbl") or die($mysqli->error);
 
-//gets teh last data in the garage table row
+//gets the last data in the garage table row
 $garage_tbl = $mysqli->query("SELECT * FROM garage_tbl WHERE id=(SELECT max(id) FROM garage_tbl)") or die($mysqli->error);
 //gets the last data in the vendor table row
 $vendors_tbl = $mysqli->query("SELECT * FROM vendors_tbl WHERE id=(SELECT max(id) FROM vendors_tbl)") or die($mysqli->error);
@@ -34,6 +39,11 @@ $vendors = $mysqli->query("SELECT * FROM vendors_tbl") or die($mysqli->error);
 
 //Geting the 7 days fueling
 $fuel_cost = $mysqli->query("SELECT * FROM vehicles_fueling order by `vehicles_fueling`.`fueling_date` ASC") or die($mysqli->error);
+$fcost = $mysqli->query("SELECT * FROM vehicles_fueling order by `vehicles_fueling`.`fueling_date` DESC") or die($mysqli->error);
+ while($cost = mysqli_fetch_array($fcost)){
+       $fuelprice[] = $cost['fuelcost'];
+ }
+
 $fuelinghistory = $mysqli->query("SELECT * FROM vehicles_fueling") or die($mysqli->error);
 
 

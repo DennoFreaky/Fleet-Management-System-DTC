@@ -24,7 +24,7 @@
                                 <a href="../driver_interface/fueling.php?edit=<?php echo $row['id']; ?>">
                                         <div class="col bg-transparent text-center py-3 rounded-start bg-light">
                                                 <h3 class="text-dark " style="">Start Fueling</h3>
-                                                <img src="../pics/pngwing.com.png" style="height:180px;">
+                                                <img src="https://www.pngwing.png" style="height:180px;">
                                         </div>
                                 </a>
                         </div>  
@@ -32,7 +32,7 @@
                                 <a href="../driver_interface/inspection.php?edit=<?php echo $row['id']; ?>">
                                         <div class="col bg-transparent text-center py-3 rounded-start bg-light">
                                                 <h3 class="text-dark " style="">Start Inspection</h3>
-                                                <img src="../pics/pngwing.com.png" style="height:180px;">
+                                                <img src="../pics/inspection.png" style="height:180px;">
                                         </div>
                                 </a>
                         </div>
@@ -40,7 +40,7 @@
                                 <a href="../driver_interface/v_detail.php">
                                         <div class="col bg-transparent text-center py-3 rounded-start bg-light">
                                                 <h3 class="text-dark " style="">Vehicle information</h3>
-                                                <img src="../pics/pngwing.com.png" style="height:180px;">
+                                                <img src="../otherimg/vehicledata.png" style="height:180px;">
                                         </div>
                                 </a>
                         </div>

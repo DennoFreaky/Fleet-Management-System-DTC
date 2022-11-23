@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css\">
+    <link rel="stylesheet" href="../bootstrap-5.0.0-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../css/transport.css">
+    <title>DIGI_TRANS</title>
+
+</head>
+<body class="m-5" >
+    <div class="container-sm gy-5 gx-5 my-5 shadow align-items-center text-center" style= "width:auto;height:auto; font-size: 18px;border-radius: 5px;">
+        <a href="../driver_interface/d_index.php" class="text-success">
+            <img src="../pics/1291276.jpg" class=" mx-5 my-3 rounded-circle" style="width: 200px; height: 200px;;">
+            <h2 class="text-center my-3 text-success">Your Form was Received successfully</h2>
+            <p>BACK TO HOMEPAGE</p>
+        </a>
+        <form action="../driver_interface/inspection_process.php" method="POST">
+        <?php if($row1 = $status->fetch_assoc()): ?>
+        <input type="hidden" name="status" value="<?php if($row1['window'or 'side_mirrors'or 'door'or 'reflector'or 'rims'or 'tirepressure'or 'headlight'or 'highbeam'or 'hazard'or 'turnsignals'or 'seatbelt'or 'windshield_wipers'or 'gauges'] !== 'Good' or 'n/a' ){ echo "All Good" ;} else {  echo "Had Repairs Done"; } ?>"/>
+        <?php endif; ?>
+        <div class="row-md">
+            <input type="submit" id="statusupdate" class="col-sm btn btn-success m-2" value="Go Back!" onclick="history.back()">
+        </div>
+    </form>
+    </div>
+</body>
+</html>

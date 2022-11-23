@@ -1,3 +1,7 @@
+<?php
+
+ ?>
+ 
 <!DOCTYPE html>
 <html lang="eng">
 <head>
@@ -47,7 +51,7 @@
                         </div>
                         <div class="row">
                             <div class="col m-1">
-                                <a href="">Active</a>
+                                <a href="../vehicle/all_vehicles.php">Active</a>
                             </div>
                             <div class="col m-1 text-end">
                                 <h6 class="m-2 text-primary"> <?php echo $rowcount5 ?></h6>
@@ -55,7 +59,7 @@
                         </div>
                         <div class="row">
                             <div class="col m-1">
-                                <a href="">Out of service</a>
+                                <a href="<td><?php echo $row['v_name']; ?></td>">Out of service</a>
                             </div>
                             <div class="col m-1 text-end">
                                 <h6 class="m-2 text-primary"> <?php echo $rowcount4 ?></h6>
@@ -81,7 +85,7 @@
                                       data: {
                                         labels: xValues,
                                         datasets: [{ 
-                                          data: [860,1140,1060,1060,1070,1110,1330],
+                                          data: <?php echo json_encode($fuelprice); ?>,
                                           borderColor: "red",
                                           fill: false
                                         }, { 

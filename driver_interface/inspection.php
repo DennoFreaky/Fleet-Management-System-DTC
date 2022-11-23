@@ -23,14 +23,14 @@
                                     <input type="hidden" name="driver" value="<?= ($drivers_tbl["id_no"]) ?>"/>
                                 <?php endif; ?>
                                 <?php if($row1 = $status->fetch_assoc()): ?>
-                                    <input type="hidden" name="status" value="<?php if($row1['window'or 'side_mirrors'or 'door'or 'reflector'or 'rims'or 'tirepressure'or 'headlight'or 'highbeam'or 'hazard'or 'turnsignals'or 'seatbelt'or 'windshield_wipers'or 'gauges'] == 'Good' or 'n/a' ){ echo "All Good" ;} else {  echo "Had Repairs Done"; } ?>"/>
+                                    <input type="hidden" name="status" value="<?php if($row1['window'] == ('Good' or 'n/a') and ['side_mirrors'] == ('Good' or 'n/a') and ['door'] == ('Good' or 'n/a') and ['reflector'] == ('Good' or 'n/a') and ['rims'] == ('Good' or 'n/a') and ['tirepressure'] == ('Good' or 'n/a') and ['headlight'] == ('Good' or 'n/a') and ['highbeam'] == ('Good' or 'n/a') and ['hazard'] == ('Good' or 'n/a') and ['turnsignals'] == ('Good' or 'n/a') and ['seatbelt'] == ('Good' or 'n/a') and ['windshield_wipers'] == ('Good' or 'n/a') and ['gauges'] == ('Good' or 'n/a') ){ echo "All Good" ;} else {  echo "Need repair"; } ?>"/>
                                 <?php endif; ?>
                                 <?php if($row = $allvehicle->fetch_assoc()): ?>
                                     <input type="hidden" name="v_id" value="<?php echo $row['v_id']; ?>"/>
                                     <input type="hidden" name="v_name" value="<?php echo $row['v_name']; ?>"/>
                                     <?php date_default_timezone_set('Africa/Nairobi') == $date; $date = date("Y-m-d\TH:i"); ?>
                                     <input type="hidden" name="inspection_time" value="<?= $date ?>"/>
-                                <?php endif; ?>
+                                
                                 <input type="hidden" name="id" value="<?php echo $id; ?>"/>
                                 <h4 class="p-3 text-center">INSPECTION CHECKLIST</h4>
                                 
@@ -47,15 +47,15 @@
                                         </div>
                                         <div class="col-3 text-center">
                                             <label for="good">Good</label><br>
-                                            <input type="radio" class="bghover bg-light" name="window" value="Good" id="good" placeholder=""/>
+                                            <input type="radio" class=" bg-light" name="window" value="Good" id="good" placeholder=""/>
                                         </div>
                                         <div class="col-3 text-center">      
                                             <label for="needrepair" style="width:100px;">Need repair</label><br>
-                                            <input type="radio" class="bghover bg-light" name="window" value="need repair" id="radio" placeholder=""/>
+                                            <input type="radio" class=" bg-light" name="window" value="need repair" id="radio" placeholder=""/>
                                         </div>
                                         <div class="col-3 text-center">      
                                             <label for="n/a">N/A</label><br>
-                                            <input type="radio" class="bghover bg-light" name="window" value="not_assigned" id="n/a" placeholder=""/>
+                                            <input type="radio" class=" bg-light" name="window" value="not_assigned" id="n/a" placeholder=""/>
                                         </div>
                                     </div>
                                 </div>
@@ -66,15 +66,15 @@
                                         </div>
                                         <div class="col-3 text-center">
                                             <label for="good">Good</label><br>
-                                            <input type="radio" class="bghover bg-light" name="side_mirrors" value="Good" id="window" placeholder=""/>
+                                            <input type="radio" class=" bg-light" name="side_mirrors" value="Good" id="window" placeholder=""/>
                                         </div>
                                         <div class="col-3 text-center">      
                                             <label for="needrepair" style="width:100px;">Need repair</label><br>
-                                            <input type="radio" class="bghover bg-light" name="side_mirrors" value="need repair" id="window" placeholder=""/>
+                                            <input type="radio" class=" bg-light" name="side_mirrors" value="need repair" id="window" placeholder=""/>
                                         </div>
                                         <div class="col-3 text-center">      
                                             <label for="n/a">N/A</label><br>
-                                            <input type="radio" class="bghover bg-light" name="side_mirrors" value="not_assigned" id="n/a" placeholder=""/>
+                                            <input type="radio" class=" bg-light" name="side_mirrors" value="not_assigned" id="n/a" placeholder=""/>
                                         </div>
                                     </div>
                                 </div>
@@ -85,15 +85,15 @@
                                         </div>
                                         <div class="col-3 text-center">
                                             <label for="good">Good</label><br>
-                                            <input type="radio" class="bghover bg-light" name="door" value="Good" id="window" placeholder=""/>
+                                            <input type="radio" class=" bg-light" name="door" value="Good" id="window" placeholder=""/>
                                         </div>
                                         <div class="col-3 text-center">      
                                             <label for="needrepair" style="width:100px;">Need repair</label><br>
-                                            <input type="radio" class="bghover bg-light" name="door" value="need repair" id="window" placeholder=""/>
+                                            <input type="radio" class=" bg-light" name="door" value="need repair" id="window" placeholder=""/>
                                         </div>
                                         <div class="col-3 text-center">      
                                             <label for="n/a">N/A</label><br>
-                                            <input type="radio" class="bghover bg-light" name="door" value="not_assigned" id="n/a" placeholder=""/>
+                                            <input type="radio" class=" bg-light" name="door" value="not_assigned" id="n/a" placeholder=""/>
                                         </div>
                                     </div>
                                 </div>
@@ -104,15 +104,15 @@
                                         </div>
                                         <div class="col-3 text-center">
                                             <label for="good">Good</label><br>
-                                            <input type="radio" class="bghover bg-light" name="reflector" value="Good" id="window" placeholder=""/>
+                                            <input type="radio" class=" bg-light" name="reflector" value="Good" id="window" placeholder=""/>
                                         </div>
                                         <div class="col-3 text-center">      
                                             <label for="needrepair" style="width:100px;">Need repair</label><br>
-                                            <input type="radio" class="bghover bg-light" name="reflector" value="need repair" id="window" placeholder=""/>
+                                            <input type="radio" class=" bg-light" name="reflector" value="need repair" id="window" placeholder=""/>
                                         </div>
                                         <div class="col-3 text-center">      
                                             <label for="n/a">N/A</label><br>
-                                            <input type="radio" class="bghover bg-light" name="reflector" value="not_assigned" id="n/a" placeholder=""/>
+                                            <input type="radio" class=" bg-light" name="reflector" value="not_assigned" id="n/a" placeholder=""/>
                                         </div>
                                     </div>
                                 </div>
@@ -125,15 +125,15 @@
                                         </div>
                                         <div class="col-3 text-center">
                                             <label for="good">Good</label><br>
-                                            <input type="radio" class="bghover bg-light" name="rims" value="Good" id="window" placeholder=""/>
+                                            <input type="radio" class=" bg-light" name="rims" value="Good" id="window" placeholder=""/>
                                         </div>
                                         <div class="col-3 text-center">      
                                             <label for="needrepair" style="width:100px;">Need repair</label><br>
-                                            <input type="radio" class="bghover bg-light" name="rims" value="need repair" id="window" placeholder=""/>
+                                            <input type="radio" class=" bg-light" name="rims" value="need repair" id="window" placeholder=""/>
                                         </div>
                                         <div class="col-3 text-center">      
                                             <label for="n/a">N/A</label><br>
-                                            <input type="radio" class="bghover bg-light" name="rims" value="not_assigned" id="n/a" placeholder=""/>
+                                            <input type="radio" class=" bg-light" name="rims" value="not_assigned" id="n/a" placeholder=""/>
                                         </div>
                                     </div>
                                 </div>
@@ -144,15 +144,15 @@
                                         </div>
                                         <div class="col-3 text-center">
                                             <label for="good">Good</label><br>
-                                            <input type="radio" class="bghover bg-light" name="tirepressure" value="Good" id="window" placeholder=""/>
+                                            <input type="radio" class=" bg-light" name="tirepressure" value="Good" id="window" placeholder=""/>
                                         </div>
                                         <div class="col-3 text-center">      
                                             <label for="needrepair" style="width:100px;">Need repair</label><br>
-                                            <input type="radio" class="bghover bg-light" name="tirepressure" value="need repair" id="window" placeholder=""/>
+                                            <input type="radio" class=" bg-light" name="tirepressure" value="need repair" id="window" placeholder=""/>
                                         </div>
                                         <div class="col-3 text-center">      
                                             <label for="n/a">N/A</label><br>
-                                            <input type="radio" class="bghover bg-light" name="tirepressure" value="not_assigned" id="n/a" placeholder=""/>
+                                            <input type="radio" class=" bg-light" name="tirepressure" value="not_assigned" id="n/a" placeholder=""/>
                                         </div>
                                     </div>
                                 </div>
@@ -165,15 +165,15 @@
                                         </div>
                                         <div class="col-3 text-center">
                                             <label for="good">Good</label><br>
-                                            <input type="radio" class="bghover bg-light" name="headlight" value="Good" id="good" placeholder=""/>
+                                            <input type="radio" class=" bg-light" name="headlight" value="Good" id="good" placeholder=""/>
                                         </div>
                                         <div class="col-3 text-center">      
                                             <label for="needrepair" style="width:100px;">Need repair</label><br>
-                                            <input type="radio" class="bghover bg-light" name="headlight" value="need repair" id="needrepair" placeholder=""/>
+                                            <input type="radio" class=" bg-light" name="headlight" value="need repair" id="needrepair" placeholder=""/>
                                         </div>
                                         <div class="col-3 text-center">      
                                             <label for="n/a">N/A</label><br>
-                                            <input type="radio" class="bghover bg-light" name="headlight" value="not_assigned" id="n/a" placeholder=""/>
+                                            <input type="radio" class=" bg-light" name="headlight" value="not_assigned" id="n/a" placeholder=""/>
                                         </div>
                                     </div>
                                 </div>
@@ -184,15 +184,15 @@
                                         </div>
                                         <div class="col-3 text-center">
                                             <label for="good">Good</label><br>
-                                            <input type="radio" class="bghover bg-light" name="highbeam" value="Good" id="window" placeholder=""/>
+                                            <input type="radio" class=" bg-light" name="highbeam" value="Good" id="window" placeholder=""/>
                                         </div>
                                         <div class="col-3 text-center">      
                                             <label for="needrepair" style="width:100px;">Need repair</label><br>
-                                            <input type="radio" class="bghover bg-light" name="highbeam" value="need repair" id="window" placeholder=""/>
+                                            <input type="radio" class=" bg-light" name="highbeam" value="need repair" id="window" placeholder=""/>
                                         </div>
                                         <div class="col-3 text-center">      
                                             <label for="n/a">N/A</label><br>
-                                            <input type="radio" class="bghover bg-light" name="highbeam" value="not_assigned" id="n/a" placeholder=""/>
+                                            <input type="radio" class=" bg-light" name="highbeam" value="not_assigned" id="n/a" placeholder=""/>
                                         </div>
                                     </div>
                                 </div>
@@ -203,15 +203,15 @@
                                         </div>
                                         <div class="col-3 text-center">
                                             <label for="good">Good</label><br>
-                                            <input type="radio" class="bghover bg-light" name="hazard" value="Good" id="window" placeholder=""/>
+                                            <input type="radio" class=" bg-light" name="hazard" value="Good" id="window" placeholder=""/>
                                         </div>
                                         <div class="col-3 text-center">      
                                             <label for="needrepair" style="width:100px;">Need repair</label><br>
-                                            <input type="radio" class="bghover bg-light" name="hazard" value="need repair" id="window" placeholder=""/>
+                                            <input type="radio" class=" bg-light" name="hazard" value="need repair" id="window" placeholder=""/>
                                         </div>
                                         <div class="col-3 text-center">      
                                             <label for="n/a">N/A</label><br>
-                                            <input type="radio" class="bghover bg-light" name="hazard" value="not_assigned" id="n/a" placeholder=""/>
+                                            <input type="radio" class=" bg-light" name="hazard" value="not_assigned" id="n/a" placeholder=""/>
                                         </div>
                                     </div>
                                 </div>
@@ -222,15 +222,15 @@
                                         </div>
                                         <div class="col-3 text-center">
                                             <label for="good">Good</label><br>
-                                            <input type="radio" class="bghover bg-light" name="turnsignals" value="Good" id="window" placeholder=""/>
+                                            <input type="radio" class=" bg-light" name="turnsignals" value="Good" id="window" placeholder=""/>
                                         </div>
                                         <div class="col-3 text-center">      
                                             <label for="needrepair" style="width:100px;">Need repair</label><br>
-                                            <input type="radio" class="bghover bg-light" name="turnsignals" value="need repair" id="window" placeholder=""/>
+                                            <input type="radio" class=" bg-light" name="turnsignals" value="need repair" id="window" placeholder=""/>
                                         </div>
                                         <div class="col-3 text-center">      
                                             <label for="n/a">N/A</label><br>
-                                            <input type="radio" class="bghover bg-light" name="turnsignals" value="not_assigned" id="n/a" placeholder=""/>
+                                            <input type="radio" class=" bg-light" name="turnsignals" value="not_assigned" id="n/a" placeholder=""/>
                                         </div>
                                     </div>
                                 </div>
@@ -243,15 +243,15 @@
                                         </div>
                                         <div class="col-3 text-center">
                                             <label for="good">Good</label><br>
-                                            <input type="radio" class="bghover bg-light" name="seatbelt" value="Good" id="window" placeholder=""/>
+                                            <input type="radio" class=" bg-light" name="seatbelt" value="Good" id="window" placeholder=""/>
                                         </div>
                                         <div class="col-3 text-center">      
                                             <label for="needrepair" style="width:100px;">Need repair</label><br>
-                                            <input type="radio" class="bghover bg-light" name="seatbelt" value="need repair" id="window" placeholder=""/>
+                                            <input type="radio" class=" bg-light" name="seatbelt" value="need repair" id="window" placeholder=""/>
                                         </div>
                                         <div class="col-3 text-center">      
                                             <label for="n/a">N/A</label><br>
-                                            <input type="radio" class="bghover bg-light" name="seatbelt" value="not_assigned" id="n/a" placeholder=""/>
+                                            <input type="radio" class=" bg-light" name="seatbelt" value="not_assigned" id="n/a" placeholder=""/>
                                         </div>
                                     </div>
                                 </div>
@@ -262,15 +262,15 @@
                                         </div>
                                         <div class="col-3 text-center">
                                             <label for="good">Good</label><br>
-                                            <input type="radio" class="bghover bg-light" name="windshield_wipers" value="Good" id="window" placeholder=""/>
+                                            <input type="radio" class=" bg-light" name="windshield_wipers" value="Good" id="window" placeholder=""/>
                                         </div>
                                         <div class="col-3 text-center">      
                                             <label for="needrepair" style="width:100px;">Need repair</label><br>
-                                            <input type="radio" class="bghover bg-light" name="windshield_wipers" value="need repair" id="window" placeholder=""/>
+                                            <input type="radio" class=" bg-light" name="windshield_wipers" value="need repair" id="window" placeholder=""/>
                                         </div>
                                         <div class="col-3 text-center">      
                                             <label for="n/a">N/A</label><br>
-                                            <input type="radio" class="bghover bg-light" name="windshield_wipers" value="not_assigned" id="n/a" placeholder=""/>
+                                            <input type="radio" class=" bg-light" name="windshield_wipers" value="not_assigned" id="n/a" placeholder=""/>
                                         </div>
                                     </div>
                                 </div>
@@ -281,20 +281,25 @@
                                         </div>
                                         <div class="col-3 text-center">
                                             <label for="good">Good</label><br>
-                                            <input type="radio" class="bghover bg-light" name="gauges" value="Good" id="window" placeholder=""/>
+                                            <input type="radio" class=" bg-light" name="gauges" value="Good" id="window" placeholder=""/>
                                         </div>
                                         <div class="col-3 text-center">      
                                             <label for="needrepair" style="width:100px;">Need repair</label><br>
-                                            <input type="radio" class="bghover bg-light" name="gauges" value="need repair" id="window" placeholder=""/>
+                                            <input type="radio" class=" bg-light" name="gauges" value="need repair" id="window" placeholder=""/>
                                         </div>
                                         <div class="col-3 text-center">      
                                             <label for="n/a">N/A</label><br>
-                                            <input type="radio" class="bghover bg-light" name="gauges" value="not_assigned" id="n/a" placeholder=""/>
+                                            <input type="radio" class=" bg-light " name="gauges" value="not_assigned" id="n/a" placeholder=""/>
                                         </div>
                                     </div>
                                 </div>
+                                <div class="text-center m-1">
+                                    <label for="mileage">mileage</label><br>
+                                    <input type="text" class=" bg-light btn btn-outline" style="width:300px;" name="mileage" id="mileage" placeholder="System Mileage reading[<?php echo $row['mileage']; ?>]"/>
+                                </div>
+                                <?php endif; ?>
                                 <div class="text-center">
-                                <?php if($submit == true): ?>
+                                    <?php if($submit == true): ?>
                                     <button type="submit" name="submit" class="my-2 text-light btn btn-outline-dark btn-secondary">SUBMIT</button>
                                 <?php else: ?>
                                 <?php endif; ?>

@@ -2,7 +2,7 @@
                     <div class="col-sm m-1">
                         
                         <div class="">
-                            <table class="table">
+                            <table id="fuelhistory" class="table">
                                 <thead>
                                     <p class="p-2 text-center"><b>Fueling History</b></p>
                                     <tr>
@@ -26,6 +26,11 @@
                                 <?php }; ?>
                                 </tbody>
                             </table>
+                            <script>
+                                $(document).ready(function () {
+                                $('#fuelhistory').DataTable();
+                                });
+                            </script>
                         </div>
                     </div>
                 </div>

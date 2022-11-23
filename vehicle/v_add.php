@@ -21,7 +21,7 @@
                         <h5 class="my-3 text-center">Vehicle registration</h5>
                 </div>
                 <div class="row">
-                    <div class="col-md-8 m-1 shadow" >
+                    <div class="col-md m-1 shadow" >
                         <form class="form-row" style="font-weight:bold;"method="POST" action="../vehicle/v_form_process.php">
                             <h5>Identifier details</h5>
                             <div class="col form-group my-2">
@@ -54,8 +54,12 @@
                                 <?php endif; ?>
                             </div>
                             <div class="col form-group my-2">
-                                <label for="mileage">Mileage</label>
+                                <label for="mileage">Current Mileage</label>
                                 <input type="number" class="form-control" name="mileage"  id="mileage" placeholder="driven distance"/>
+                            </div>
+                            <div class="col form-group my-2">
+                                <label for="name">Input Mileage for next Service</label>
+                                <input type="number" class="form-control" name="service_after"  id="style" placeholder="set mileage until next service"/>
                             </div>
                             <div class="col form-group my-2">
                                 <label for="status">Status</label>
@@ -80,26 +84,6 @@
                             <h5>Specific Details</h5>
                             <div class="text-center form-group my-2">
                                 <button type="submit" name="submit" class="my-2 text-light btn btn-outline-dark btn-secondary">Submit</button>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="col-sm m-1 shadow">
-                        <p class="p-2"><b>Add vehicle using Vehicle Identification Number(VIN)</b></p>
-                        <form class=" form-row" style="font-weight:bold;"method="POST" action="">
-                            <div class="col form-group my-2">
-                                <label for="name">Name</label>
-                                <input type="text" class="form-control" name="name"  id="style" placeholder="vehicle-name"/>
-                            </div>
-                            <div class="col form-group my-2">
-                                <label for="vin">VIN</label>
-                                <input type="text" class="form-control" name="style"  id="style" placeholder="style"/>
-                            </div>
-                            <div class="col form-group my-2">
-                                <label for="licence_plate">Licence-plate</label>
-                                <input type="licence_plate" class="form-control" name="licence_plate"  id="licence_plate" placeholder="Licence_plate"/>
-                            </div>
-                            <div class="text-center my-2">
-                                <button type="submit" name="submit" class="my-2 text-light btn btn-outline-dark btn-secondary">Decode</button>
                             </div>
                         </form>
                     </div>

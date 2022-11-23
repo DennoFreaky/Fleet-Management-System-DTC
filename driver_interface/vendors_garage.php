@@ -18,36 +18,37 @@
                 <div class="rowtwo">
                     <h4 class="fw-bold text-center">Vendors & Garage</h4>
                 </div>
-                <div class="row shadow" style="">
-                    <div class="col my-2 text-start">
+                <div class="row">
+                    <div class="col-md my-2 m-1 text-start shadow">
                         <h4>Garages</h4><hr>
-                        <div class="row dropdown">
-                            <div class="col-sm text-start">
+                        <div class="row">
+                            <div class="col-12 text-start">
                             <?php while($row = $garages->fetch_assoc()): ?>
                                 <a href="<?php echo $row['g_link']; ?>">
                                 <p><b class="text-dark">Name: </b><?php echo $row['g_name']; ?></p>
-                                <p><b class="text-dark"> Location: </b><?php echo $row['g_location']; ?></p></a><hr>
+                                <p><b class="text-dark"> Location: </b><?php echo $row['g_address']; ?></p></a><hr style="margin:0px;">
                                 
                             <?php endwhile; ?>
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm my-2 text-center">
+                    <div class="col-md my-2 m-1 shadow text-center">
                         <h4>VENDORS</h4><hr>
-                        <div class="row dropdown">
-                            <div class="col-sm text-start">
-                            <?php while($row1 = $vendors->fetch_assoc()): ?>
-                                <a href="<?php echo $row1['vendor_link']; ?>">
+                        <div class="row ">
+                        <?php while($row1 = $vendors->fetch_assoc()): ?>
+                            <div class="col-12 mx-2 m-1 text-start">
                                 <p><b class="text-dark">Name: </b><?php echo $row1['vendor_name']; ?></p>
-                                <p><b class="text-dark"> Location: </b><?php echo $row1['vendor_address']; ?></p></a><hr>
-                            <?php endwhile; ?>
+                                <p><b class="text-dark"> Location: <a href="<?php echo $row1['vendor_link']; ?>"></b><?php echo $row1['vendor_address']; ?></p></a>
+                                <p><b class="text-dark"> Website: </b><a href="<?php echo $row1['weblink']; ?>"><?php echo $row1['weblink']; ?></p></a>
+                                <hr style="margin:0px;">
                             </div>
+                            <?php endwhile; ?>
                         </div>
                     </div>
 
-                    <div class="col-md-6 my-2 text-center">      
-                        <h4>Map</h4><hr>
-                        <div class="row" style="overflow:hidden;">
+                    <div class="col-lg my-2 text-center">      
+                        <h4></h4><hr>
+                        <div class="row" id="map" style="overflow:scroll-y;width:100%;height:400px;">
                             <img src="../pics/shell-fuel-station-in-europe_100590975_m.jpg"/>
                             <div class="col text-center">
                                 <p>Garage name </p>

@@ -22,6 +22,7 @@ $v_name = $_POST['v_name'];
 $license_plate = $_POST['license_plate'];
 $v_branch = $_POST['v_branch'];
 $mileage = $_POST['mileage'];
+$service_after = $_POST['service_after'];
 $status = $_POST['status'];
 $v_year = $_POST['v_year'];
 $v_make = $_POST['v_make'];
@@ -34,14 +35,15 @@ if ($conn ->connect_error){
     
     die('Connection Failed : '.$conn->connect_error);
 }else{
-    $stmt = $conn->prepare("INSERT INTO vehicles_tbl(v_id,vin,v_name,license_plate,v_branch,mileage,status, v_year,v_make,v_model,v_engine)
-            values(?,?,?,?,?,?,?,?,?,?,?)");
-            $stmt->bind_param("sssssssssss",$v_id,
+    $stmt = $conn->prepare("INSERT INTO vehicles_tbl(v_id,vin,v_name,license_plate,v_branch,mileage,service_after,status, v_year,v_make,v_model,v_engine)
+            values(?,?,?,?,?,?,?,?,?,?,?,?)");
+            $stmt->bind_param("ssssssssssss",$v_id,
                                             $vin,
                                             $v_name,
                                             $license_plate,
                                             $v_branch,
                                             $mileage,
+                                            $service_after,
                                             $status,
                                             $v_year,
                                             $v_make,
@@ -97,6 +99,8 @@ if(isset($_GET['edit'])){
         $v_name = $_POST['v_name'];
         $license_plate = $_POST['license_plate'];
         $v_branch = $_POST['v_branch'];
+        $mileage = $_POST['mileage'];
+        $service_after = $_POST['service_after'];
         $v_year = $_POST['v_year'];
         $v_make = $_POST['v_make'];
         $v_model = $_POST['v_model'];
@@ -104,7 +108,7 @@ if(isset($_GET['edit'])){
 
 
         $conn = require __DIR__ . "../../authentication/mega_db.php";
-        $conn ->query("UPDATE vehicles_tbl SET  vin='$vin',v_name='$v_name',license_plate='$license_plate',v_branch='$v_branch',v_year='$v_year',v_make='$v_make',v_model='$v_model',v_engine= '$v_engine' WHERE id = $id") or die($conn->error);
+        $conn ->query("UPDATE vehicles_tbl SET  vin='$vin',v_name='$v_name',license_plate='$license_plate',v_branch='$v_branch',mileage='$mileage',service_after='$service_after',v_year='$v_year',v_make='$v_make',v_model='$v_model',v_engine= '$v_engine' WHERE id = $id") or die($conn->error);
 
     
         $_SESSION['message'] = "Record has been Updated!";
