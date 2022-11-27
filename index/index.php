@@ -59,7 +59,7 @@
                         </div>
                         <div class="row">
                             <div class="col m-1">
-                                <a href="<td><?php echo $row['v_name']; ?></td>">Out of service</a>
+                                <a href="../vehicle/all_vehicles.php">Out of service</a>
                             </div>
                             <div class="col m-1 text-end">
                                 <h6 class="m-2 text-primary"> <?php echo $rowcount4 ?></h6>
@@ -154,20 +154,20 @@
                                 <a href="">
                                     <div class="row m-3 rounded alert-danger shadow">
                                         <div class="col text-center fw-bold m-1">
-                                            <p class="m-2">Vehicle Overdue</p>
+                                            <p class="m-2">Service Overdue</p>
                                         </div>
                                         <div class="col text-center fw-bold m-1 ">
-                                            <p class="m-2 danger">5</p>
+                                            <p class="m-2 danger"><?php echo $rowcount7 ?></p>
                                         </div>
                                     </div>
                                 </a>
                                 <a href="">
                                     <div class="row m-3 rounded shadow">
                                         <div class="col text-center fw-bold m-1">
-                                            <p class="m-2">Due-soon</p>
+                                            <p class="m-2">Service Due-soon</p>
                                         </div>
                                         <div class="col text-center fw-bold m-1 ">
-                                            <p class="m-2">3</p>
+                                            <p class="m-2"><?php echo $rowcount8 ?></p>
                                         </div>
                                     </div>
                                 </a>
@@ -199,11 +199,9 @@
                                 </a>
                                 <a href="../php_lib/allhistory.php">
                                     <div class="row m-3 rounded shadow">
-                                    <?php if (isset($mega_admin)): ?>
                                         <div class="col text-center fw-bold m-1">
                                             <p class="m-2">Recent Fueling</p>
                                         </div>
-                                    <?php endif; ?>
                                         <div class="col text-center fw-bold m-1 ">
                                             <h6 class="m-2 text-primary"><?php echo $rowcount6 ?></h6>
                                         </div>

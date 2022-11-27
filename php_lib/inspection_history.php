@@ -14,11 +14,12 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php while($row = $inspectionhistory->fetch_assoc()){ ?>  
+                                    <?php while($row = $inspectionhistory->fetch_assoc())
+                                          { ?>  
                                     <tr>
                                         <td><a href=""><?php echo $row['v_id']; ?></a></td>
                                         <td><?php echo $row['v_name']; ?></td>
-                                        <td><?php if($row['window'or 'side_mirrors'or 'door'or 'reflector'or 'rims'or 'tirepressure'or 'headlight'or 'highbeam'or 'hazard'or 'turnsignals'or 'seatbelt'or 'windshield_wipers'or 'gauges'] !== 'Good' or null ){ echo  "Needs Repair" ;} else {  echo "All Good"; } ?></td>
+                                        <td><?php echo $row['status']; ?></td>
                                         <td><?php echo $row['inspection_time']; ?></td>
                                     </tr>
                                 <?php }; ?>

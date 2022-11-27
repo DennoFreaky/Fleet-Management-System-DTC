@@ -78,9 +78,11 @@ if(isset($_GET['edit'])){
        $v_id = $vehicles_tbl['v_id'];
        $vin = $vehicles_tbl['vin'];
        $v_name = $vehicles_tbl['v_name'];
+       $driver = $vehicles_tbl['driver'];
        $license_plate = $vehicles_tbl['license_plate'];
        $v_branch = $vehicles_tbl['v_branch'];
        $mileage = $vehicles_tbl['mileage'];
+       $service_after = $vehicles_tbl['service_after'];
        $status = $vehicles_tbl['status'];
        $v_year = $vehicles_tbl['v_year'];
        $v_make = $vehicles_tbl['v_make'];

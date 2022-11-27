@@ -19,3 +19,9 @@ $rowcount5 = mysqli_num_rows($sql5);
 
 $sql6 = $mysqli->query("SELECT * FROM vehicles_fueling WHERE id = (SELECT max(id) FROM vehicles_fueling)");
 $rowcount6 = mysqli_num_rows($sql6);
+
+$sql7 = $mysqli->query("SELECT * FROM vehicles_tbl WHERE mileage > service_after");
+$rowcount7 = mysqli_num_rows($sql7);
+
+$sql8 = $mysqli->query("SELECT * FROM vehicles_tbl WHERE  service_after-mileage <= 1000");
+$rowcount8 = mysqli_num_rows($sql8);

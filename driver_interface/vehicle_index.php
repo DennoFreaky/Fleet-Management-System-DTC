@@ -9,6 +9,14 @@
     <title>MEGA_DRIVER</title>
 
 </head>
+<style>
+.vdata{
+    font-family: "Canva Sans", "Noto Sans Variable";
+    font-weight:700;
+    font-size: 24px;
+    line-height:50px;
+}
+</style>
 <body class="">
     <div class="d-flex ">
         <div class="col-12">
@@ -22,31 +30,29 @@
                                 <?php if($row = $allvehicle->fetch_assoc()): ?>
                                 <?php endif; ?>
                                 <a href="../driver_interface/fueling.php?edit=<?php echo $row['id']; ?>">
-                                        <div class="col bg-transparent text-center py-3 rounded-start bg-light">
-                                                <h3 class="text-dark " style="">Start Fueling</h3>
-                                                <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pngwing.com%2Fen%2Ffree-png-zdmvh&psig=AOvVaw3MbnBmEOMyMASePu91EYhx&ust=1669296537710000&source=images&cd=vfe&ved=0CA0QjRxqFwoTCMiSx7a0xPsCFQAAAAAdAAAAABAD" style="height:180px;">
+                                        <div class="col bg-transparent p-2 text-center rounded-start bg-light">
+                                                <h3 class="text-dark vdata" style="font-size:30px;margin:60px;padding:;">START FUELING</h3>
                                         </div>
                                 </a>
                         </div>  
                         <div class="row shadow m-1"  style="height:250px;overflow:hidden;">  
                                 <a href="../driver_interface/inspection.php?edit=<?php echo $row['id']; ?>">
-                                        <div class="col bg-transparent text-center py-3 rounded-start bg-light">
-                                                <h3 class="text-dark " style="">Start Inspection</h3>
-                                                <img src="../pics/inspection.png" style="height:180px;">
+                                        <div class="col bg-transparent p-2 text-center rounded-start bg-light">
+                                                <h3 class="text-dark vdata" style="font-size:30px;margin:60px;padding:;">PERFORM INSPECTION</h3>
                                         </div>
                                 </a>
                         </div>
                         <div class="row shadow m-1"  style="height:250px;overflow:hidden;">  
                                 <a href="../driver_interface/v_detail.php">
-                                        <div class="col bg-transparent text-center py-3 rounded-start bg-light">
-                                                <h3 class="text-dark " style="">Vehicle information</h3>
-                                                <img src="../otherimg/vehicledata.png" style="height:180px;">
+                                       <div class="col bg-transparent p-2 text-center rounded-start bg-light">
+                                                <h3 class="text-dark vdata" style="font-size:30px;margin:60px;padding:;">VIEW VEHICLE DETAILS</h3>
                                         </div>
                                 </a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 rowtwo">
+                        <img src="../pics/960x0.jpg">
                 </div>
             </div>
         </div>

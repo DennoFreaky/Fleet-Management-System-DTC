@@ -22,9 +22,6 @@
                                 <?php if (isset($drivers_tbl)): ?>
                                     <input type="hidden" name="driver" value="<?= ($drivers_tbl["id_no"]) ?>"/>
                                 <?php endif; ?>
-                                <?php if($row1 = $status->fetch_assoc()): ?>
-                                    <input type="hidden" name="status" value="<?php if($row1['window'] == ('Good' or 'n/a') and ['side_mirrors'] == ('Good' or 'n/a') and ['door'] == ('Good' or 'n/a') and ['reflector'] == ('Good' or 'n/a') and ['rims'] == ('Good' or 'n/a') and ['tirepressure'] == ('Good' or 'n/a') and ['headlight'] == ('Good' or 'n/a') and ['highbeam'] == ('Good' or 'n/a') and ['hazard'] == ('Good' or 'n/a') and ['turnsignals'] == ('Good' or 'n/a') and ['seatbelt'] == ('Good' or 'n/a') and ['windshield_wipers'] == ('Good' or 'n/a') and ['gauges'] == ('Good' or 'n/a') ){ echo "All Good" ;} else {  echo "Need repair"; } ?>"/>
-                                <?php endif; ?>
                                 <?php if($row = $allvehicle->fetch_assoc()): ?>
                                     <input type="hidden" name="v_id" value="<?php echo $row['v_id']; ?>"/>
                                     <input type="hidden" name="v_name" value="<?php echo $row['v_name']; ?>"/>

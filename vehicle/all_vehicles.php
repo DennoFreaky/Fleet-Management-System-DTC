@@ -44,7 +44,7 @@
               <th>Driver</th>
               <th>Status</th>
               <th>Mileage</th>
-              <th style="width:100px;">Next Service in</th>
+              <th style="width:100px;">Service_After</th>
               <th>VIN</th>
               <th>Branch</th>
               <th>License_Plate</th>
@@ -90,12 +90,13 @@
           <tbody>
             <?php while($row = $allvehicle->fetch_assoc()): ?>           
                     <tr>
-                      <td><?php echo $row['v_id']; ?></td>
+                      <td><a href="../vehicle/v_overview.php?edit=<?php echo $row['id']; ?>"><?php echo $row['v_id']; ?></td></a>
                       <td><?php echo $row['v_name']; ?></td>
                       <td><b><?php echo $row['driver']; ?></b></td>
                       <?php if($row['status']!== 'All Good'): ?><td class="text-danger fw-bold" style="width:100px;"><?php echo $row['status']; ?></td><?php else: ?><td class="text-success fw-bold" style="width:100px;"><?php echo $row['status']; ?></td><?php endif; ?>
                       <td><?php echo $row['mileage']; ?></td>
-                        <?php if($ns = $row['service_after'] - $row['mileage'] < 0 ): ?><td class="text-danger"><?php echo "Service Overdue"; else: ?></td><td> <?php echo $ns = $row['service_after'] - $row['mileage']." km"; endif?></td> 
+                      <!-- checks for scheduled vehicle service(mileage) -->
+                      <?php if($scheduled_service = $row['service_after'] - $row['mileage'] < 0 ): ?><td class="text-danger"><?php echo "Service Overdue"; else: ?></td><td> <?php echo $scheduled_service = $row['service_after'] - $row['mileage']." km"; endif?></td> 
                       <td><?php echo $row['vin']; ?></td> 
                       <td><?php echo $row['v_branch']; ?></td>
                       <td><?php echo $row['license_plate']; ?></td>
@@ -109,7 +110,7 @@
                          class="btn-sm btn-info">Edit</a>
                         <a href="../vehicle/v_form_process.php?delete=<?php echo $row['id']; ?>"
                           class="btn-sm btn-danger">Delete</a>                       
-                      </td>  
+                      </td>
                       <?php else: endif; ?>
                     </tr>
             <?php endwhile; ?>

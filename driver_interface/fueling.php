@@ -27,9 +27,11 @@
                                     <input type="hidden" name="v_name" value="<?php echo $row['v_name']; ?>"/>
                                     <?php date_default_timezone_set('Africa/Nairobi') == $date; $date = date("Y-m-d\TH:i"); ?>
                                     <input type="hidden" name="fueling_date" value="<?= $date ?>"/>
+                                    <input type="hidden" name="fuel_after" value="<?php echo $row['mileage']; ?>"/>
+                                    
                                 <?php endif; ?>
                                 <input type="hidden" name="id" value="<?php echo $id; ?>"/>
-                                <h4 class="p-3 text-center">INPUT THE FUELING DETAILS</h4>
+                                <h4 class="p-3 text-center">FUEL ENTRY(If you dont have fuel card)</h4>
                                 <?php if($submit == true): ?>
                                     <h6 class="text-center text-success fa-solid fa-gas-pump"><b>Fueling in progress..</b></h6>
                                 <?php else: ?>
@@ -42,13 +44,17 @@
                                     <label for="fuelcost">FUEL PRICE(ksh)</label>
                                     <input type="number" class="form-control bghover bg-light" name="fuelcost"  id="fuelcost" placeholder="e.g. ksh 0.00"/>
                                 </div>
+                                <div class="col form-group m-5">
+                                    <label for="fuelcost">Dashboard Mileage(km)</label>
+                                    <input type="number" class="form-control bghover bg-light" name="mileage"  id="fuelcost" placeholder="Input current meter reading [0 0 0 0 0]"/>
+                                </div>
                                 <div class="text-center">
                                     <button type="submit" name="submit" class="my-2 text-light btn btn-outline-dark btn-secondary">SUBMIT</button>
                                 </div>
                             </form>
                         </div> 
                         <div class="col-sm m-1 rounded" style="overflow:scroll;width:475px;">
-                            <img class=""  src="../pics/960x0.jpg"/>
+                            <img class="rounded"  src="../pics/960x0.jpg"/>
                         <hr>
                         </div>
                     </div>

@@ -12,7 +12,7 @@ $allvehicle = $mysqli->query("SELECT * FROM vehicles_tbl WHERE v_id = ({$drivers
 $allvehicle1 = $mysqli->query("SELECT * FROM vehicles_tbl WHERE v_id = ({$drivers_tbl["v_id"]}) ") or die($mysqli->error);
 $inspection = $mysqli->query("SELECT * FROM vehicles_inspection WHERE v_id = ({$drivers_tbl["v_id"]}) and id=(SELECT max(id) FROM vehicles_inspection) ") or die($mysqli->error);
 $fueling = $mysqli->query("SELECT * FROM vehicles_fueling WHERE v_id = ({$drivers_tbl["v_id"]}) and id=(SELECT max(id) FROM vehicles_fueling) ") or die($mysqli->error);
-$status = $mysqli->query("SELECT * FROM vehicles_inspection WHERE v_id = ({$drivers_tbl["v_id"]}) and id=(SELECT max(id) FROM vehicles_inspection) ") or die($mysqli->error);
+
 ?>
 <script src="../js/index.js"></script>
                 <div class="col-12 shadow py-1"style="position:fixed;z-index:1;height:55px;background-color:rgb(244, 243, 243);">
@@ -86,7 +86,7 @@ $status = $mysqli->query("SELECT * FROM vehicles_inspection WHERE v_id = ({$driv
                                 </div>
                                 <div class="col text-start">
                                 <?php if (isset($drivers_tbl)): ?>
-                                    <p class="text-dark drivername"><b>Vehicle:</b> <?= ($drivers_tbl["vname"]) ?></p>
+                                    <p class="text-dark drivername"><b>Vehicle:</b> <a href="../driver_interface/v_detail.php"><?= ($drivers_tbl["vname"]) ?></p></a>
                                     <p class="text-dark logout"><b>License Plate:</b> <?php if($row1 = $allvehicle1->fetch_assoc()): echo $row1['license_plate'];  endif; ?></a></p>
                                 <?php endif; ?>
                                 </div>
